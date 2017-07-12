@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="e1C-ne-qWq">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Children of the Starlight.ttf">
+            <string>Children-of-theStarlight</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Category Table View Controller-->
+        <scene sceneID="bAF-qQ-CRW">
+            <objects>
+                <tableViewController id="BNv-RB-kQ6" customClass="CategoryTableViewController" customModule="EmmaGuide" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="170" sectionHeaderHeight="28" sectionFooterHeight="28" id="fyP-s0-KEm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryTableViewCell" rowHeight="170" id="RA1-B4-PWa" customClass="CategoryTableViewCell" customModule="EmmaGuide" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="170"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RA1-B4-PWa" id="COS-h0-tSk">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="169.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="norm-italy-design-0-750x1143" translatesAutoresizingMaskIntoConstraints="NO" id="3dV-WW-Dvp">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G9K-DA-eC6" customClass="Gradient" customModule="EmmaGuide" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="170" id="uWv-YP-X3C"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="FirstColor">
+                                                    <color key="value" red="0.041404463740000001" green="0.98483105959999995" blue="0.29804403740000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEB-wa-H98">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="170" id="dVi-WV-YvX"/>
+                                                <constraint firstAttribute="height" constant="170" id="xvM-fp-Rqm"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Children-of-theStarlight" family="Children of the Starlight" pointSize="82"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="xEB-wa-H98" secondAttribute="trailing" id="1BI-3n-3d5"/>
+                                        <constraint firstAttribute="trailing" secondItem="3dV-WW-Dvp" secondAttribute="trailing" id="4w4-Tu-hHq"/>
+                                        <constraint firstAttribute="bottom" secondItem="G9K-DA-eC6" secondAttribute="bottom" constant="-0.5" id="5gJ-kZ-tFm"/>
+                                        <constraint firstAttribute="bottom" secondItem="xEB-wa-H98" secondAttribute="bottom" id="8Yc-6o-SLO"/>
+                                        <constraint firstAttribute="trailing" secondItem="G9K-DA-eC6" secondAttribute="trailing" id="8hr-vv-3qg"/>
+                                        <constraint firstAttribute="bottom" secondItem="xEB-wa-H98" secondAttribute="bottom" id="L6p-dA-WIw"/>
+                                        <constraint firstItem="xEB-wa-H98" firstAttribute="leading" secondItem="COS-h0-tSk" secondAttribute="leading" id="R1g-1a-nI1"/>
+                                        <constraint firstItem="G9K-DA-eC6" firstAttribute="leading" secondItem="COS-h0-tSk" secondAttribute="leading" id="SFM-pl-Bjm"/>
+                                        <constraint firstItem="3dV-WW-Dvp" firstAttribute="top" secondItem="COS-h0-tSk" secondAttribute="top" id="X0y-0X-mJS"/>
+                                        <constraint firstAttribute="trailing" secondItem="xEB-wa-H98" secondAttribute="trailing" id="ZYQ-Jb-DGN"/>
+                                        <constraint firstItem="G9K-DA-eC6" firstAttribute="top" secondItem="COS-h0-tSk" secondAttribute="top" id="aUo-nx-ZuO"/>
+                                        <constraint firstItem="3dV-WW-Dvp" firstAttribute="leading" secondItem="COS-h0-tSk" secondAttribute="leading" id="b15-Xp-pTe"/>
+                                        <constraint firstItem="xEB-wa-H98" firstAttribute="top" secondItem="COS-h0-tSk" secondAttribute="top" id="b9m-GG-hAo"/>
+                                        <constraint firstAttribute="bottom" secondItem="3dV-WW-Dvp" secondAttribute="bottom" id="cZI-JX-FXA"/>
+                                        <constraint firstItem="xEB-wa-H98" firstAttribute="leading" secondItem="COS-h0-tSk" secondAttribute="leading" id="n1n-Wa-a0F"/>
+                                        <constraint firstItem="xEB-wa-H98" firstAttribute="top" secondItem="COS-h0-tSk" secondAttribute="top" id="tmc-Rb-ZBh"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="gradient" destination="G9K-DA-eC6" id="COZ-gG-Aef"/>
+                                    <outlet property="nameLabel" destination="xEB-wa-H98" id="nth-zx-uZE"/>
+                                    <outlet property="photoImageView" destination="3dV-WW-Dvp" id="Zw1-mc-6it"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="BNv-RB-kQ6" id="PNL-YH-jLN"/>
+                            <outlet property="delegate" destination="BNv-RB-kQ6" id="8og-Vm-qAU"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NIC-bL-XJV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-674.39999999999998" y="138.98050974512745"/>
+        </scene>
+        <!--Place Swipe View Controller-->
+        <scene sceneID="2Xv-lV-Wy0">
+            <objects>
+                <viewController id="e1C-ne-qWq" customClass="PlaceSwipeViewController" customModule="EmmaGuide" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JrH-Eb-KYQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="nQ0-Pi-aID"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zh9-eS-h9c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bwS-gc-9f0">
+                                <rect key="frame" x="16" y="103" width="343" height="537"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="cmO-Nv-maY" appends="YES" id="QJJ-ML-bq3"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="Card" destination="bwS-gc-9f0" id="adl-o7-zni"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pF7-JS-uhp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="cmO-Nv-maY">
+                    <connections>
+                        <action selector="swipeCard:" destination="e1C-ne-qWq" id="G5O-Bt-qCH"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-37.600000000000001" y="140.77961019490255"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="norm-italy-design-0-750x1143" width="750" height="827"/>
+    </resources>
+</document>
