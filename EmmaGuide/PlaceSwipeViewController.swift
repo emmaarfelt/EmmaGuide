@@ -14,8 +14,6 @@ class PlaceSwipeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,13 +22,31 @@ class PlaceSwipeViewController: UIViewController {
     }
     
     @IBAction func swipeCard(_ sender: UIPanGestureRecognizer) {
-        let card = sender.view!
+        guard let card = sender.view else { return }
+        let xFromCenter = card.center.x - view.center.x
+        let rotationAngle = xFromCenter/view.frame.width * 0.61
         let position = sender.translation(in: view)
+        
         card.center = CGPoint(x: view.center.x + position.x, y: view.center.y + position.y)
+        card.transform = CGAffineTransform(rotationAngle: rotationAngle)
         
         if sender.state == UIGestureRecognizerState.ended {
-            UIView.animate(withDuration: 0.2, animations: {
-            card.center = self.view.center})
+            if card.center.x < 75 {
+                UIView.animate(withDuration: 0.2, animations: {
+                    card.center = CGPoint(x: card.center.x - 200, y: card.center.y + 75)
+                    card.alpha = 0.0
+                })
+            } else if card.center.x > (view.frame.width - 75) {
+                UIView.animate(withDuration: 0.2, animations: {
+                    card.center = CGPoint(x: card.center.x + 200, y: card.center.y + 75)
+                    card.alpha = 0.0
+                })
+            } else {
+                UIView.animate(withDuration: 0.2, animations: {
+                    card.center = self.view.center})
+                card.transform = CGAffineTransform.identity
+            }
+           
         }
         
     }
