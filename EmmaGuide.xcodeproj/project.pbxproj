@@ -20,18 +20,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B50E3F7D1F16A08C00597ECA /* PlaceSwipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceSwipeViewController.swift; sourceTree = "<group>"; };
+		B50E3F7D1F16A08C00597ECA /* PlaceSwipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceSwipeViewController.swift; path = EmmaGuide/Resources/PlaceSwipeViewController.swift; sourceTree = SOURCE_ROOT; };
 		B58F49121F13D6E000CC8D2F /* EmmaGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmmaGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B58F49151F13D6E000CC8D2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B58F491A1F13D6E000CC8D2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B58F491C1F13D6E000CC8D2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B58F491F1F13D6E000CC8D2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B58F49211F13D6E000CC8D2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B58F49381F140FE100CC8D2F /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
-		B58F493A1F1412B800CC8D2F /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
-		B58F493C1F14142500CC8D2F /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = ../../../../Downloads/05_DefineYourDataModel/FoodTracker/FoodTracker/Category.swift; sourceTree = "<group>"; };
+		B58F49381F140FE100CC8D2F /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryTableViewCell.swift; path = Resources/CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		B58F493A1F1412B800CC8D2F /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryTableViewController.swift; path = Resources/CategoryTableViewController.swift; sourceTree = "<group>"; };
+		B58F493C1F14142500CC8D2F /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = Model/Category.swift; sourceTree = "<group>"; };
 		B58F493F1F141D3A00CC8D2F /* Children of the Starlight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Children of the Starlight.ttf"; path = "EmmaGuide/Assets.xcassets/Children of the Starlight.dataset/Children of the Starlight.ttf"; sourceTree = "<group>"; };
-		B58F49481F1427D000CC8D2F /* Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Gradient.swift; path = EmmaGuide/Gradient.swift; sourceTree = "<group>"; };
+		B58F49481F1427D000CC8D2F /* Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Gradient.swift; path = EmmaGuide/Resources/Gradient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +68,6 @@
 				B58F49291F13D83400CC8D2F /* Controllers */,
 				B58F49151F13D6E000CC8D2F /* AppDelegate.swift */,
 				B58F49191F13D6E000CC8D2F /* Main.storyboard */,
-				B50E3F7D1F16A08C00597ECA /* PlaceSwipeViewController.swift */,
 				B58F493E1F14176600CC8D2F /* Models */,
 				B58F491C1F13D6E000CC8D2F /* Assets.xcassets */,
 				B58F491E1F13D6E000CC8D2F /* LaunchScreen.storyboard */,
@@ -80,6 +79,7 @@
 		B58F49291F13D83400CC8D2F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B50E3F7D1F16A08C00597ECA /* PlaceSwipeViewController.swift */,
 				B58F493A1F1412B800CC8D2F /* CategoryTableViewController.swift */,
 				B58F49381F140FE100CC8D2F /* CategoryTableViewCell.swift */,
 			);
