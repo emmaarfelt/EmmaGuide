@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B50E3F7E1F16A08C00597ECA /* PlaceSwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50E3F7D1F16A08C00597ECA /* PlaceSwipeViewController.swift */; };
+		B56B2A721F1A830100670B68 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B56B2A711F1A830100670B68 /* CardView.xib */; };
+		B56B2A741F1A834C00670B68 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56B2A731F1A834C00670B68 /* CardView.swift */; };
+		B56B2A761F1A8A1C00670B68 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56B2A751F1A8A1C00670B68 /* SwipeViewController.swift */; };
+		B56B2A781F1A8A3800670B68 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56B2A771F1A8A3800670B68 /* DraggableView.swift */; };
 		B58F49161F13D6E000CC8D2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58F49151F13D6E000CC8D2F /* AppDelegate.swift */; };
 		B58F491B1F13D6E000CC8D2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B58F49191F13D6E000CC8D2F /* Main.storyboard */; };
 		B58F491D1F13D6E000CC8D2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B58F491C1F13D6E000CC8D2F /* Assets.xcassets */; };
@@ -20,14 +23,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B50E3F7D1F16A08C00597ECA /* PlaceSwipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlaceSwipeViewController.swift; path = EmmaGuide/Resources/PlaceSwipeViewController.swift; sourceTree = SOURCE_ROOT; };
+		B56B2A711F1A830100670B68 /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardView.xib; path = Resources/CardView.xib; sourceTree = "<group>"; };
+		B56B2A731F1A834C00670B68 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardView.swift; path = Resources/CardView.swift; sourceTree = "<group>"; };
+		B56B2A751F1A8A1C00670B68 /* SwipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwipeViewController.swift; path = Resources/SwipeViewController.swift; sourceTree = "<group>"; };
+		B56B2A771F1A8A3800670B68 /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DraggableView.swift; path = Resources/DraggableView.swift; sourceTree = "<group>"; };
 		B58F49121F13D6E000CC8D2F /* EmmaGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmmaGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B58F49151F13D6E000CC8D2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B58F491A1F13D6E000CC8D2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B58F491C1F13D6E000CC8D2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B58F491F1F13D6E000CC8D2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B58F49211F13D6E000CC8D2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B58F49381F140FE100CC8D2F /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryTableViewCell.swift; path = Resources/CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		B58F49381F140FE100CC8D2F /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryTableViewCell.swift; path = EmmaGuide/Resources/CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		B58F493A1F1412B800CC8D2F /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryTableViewController.swift; path = Resources/CategoryTableViewController.swift; sourceTree = "<group>"; };
 		B58F493C1F14142500CC8D2F /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = Model/Category.swift; sourceTree = "<group>"; };
 		B58F493F1F141D3A00CC8D2F /* Children of the Starlight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Children of the Starlight.ttf"; path = "EmmaGuide/Assets.xcassets/Children of the Starlight.dataset/Children of the Starlight.ttf"; sourceTree = "<group>"; };
@@ -68,6 +74,8 @@
 				B58F49291F13D83400CC8D2F /* Controllers */,
 				B58F49151F13D6E000CC8D2F /* AppDelegate.swift */,
 				B58F49191F13D6E000CC8D2F /* Main.storyboard */,
+				B56B2A711F1A830100670B68 /* CardView.xib */,
+				B56B2A731F1A834C00670B68 /* CardView.swift */,
 				B58F493E1F14176600CC8D2F /* Models */,
 				B58F491C1F13D6E000CC8D2F /* Assets.xcassets */,
 				B58F491E1F13D6E000CC8D2F /* LaunchScreen.storyboard */,
@@ -79,9 +87,9 @@
 		B58F49291F13D83400CC8D2F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B50E3F7D1F16A08C00597ECA /* PlaceSwipeViewController.swift */,
+				B56B2A771F1A8A3800670B68 /* DraggableView.swift */,
 				B58F493A1F1412B800CC8D2F /* CategoryTableViewController.swift */,
-				B58F49381F140FE100CC8D2F /* CategoryTableViewCell.swift */,
+				B56B2A751F1A8A1C00670B68 /* SwipeViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -97,6 +105,7 @@
 		B58F49411F141D4200CC8D2F /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
+				B58F49381F140FE100CC8D2F /* CategoryTableViewCell.swift */,
 				B58F49481F1427D000CC8D2F /* Gradient.swift */,
 				B58F493F1F141D3A00CC8D2F /* Children of the Starlight.ttf */,
 			);
@@ -164,6 +173,7 @@
 			files = (
 				B58F49201F13D6E000CC8D2F /* LaunchScreen.storyboard in Resources */,
 				B58F491D1F13D6E000CC8D2F /* Assets.xcassets in Resources */,
+				B56B2A721F1A830100670B68 /* CardView.xib in Resources */,
 				B58F49401F141D3A00CC8D2F /* Children of the Starlight.ttf in Resources */,
 				B58F491B1F13D6E000CC8D2F /* Main.storyboard in Resources */,
 			);
@@ -177,7 +187,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B58F49161F13D6E000CC8D2F /* AppDelegate.swift in Sources */,
-				B50E3F7E1F16A08C00597ECA /* PlaceSwipeViewController.swift in Sources */,
+				B56B2A741F1A834C00670B68 /* CardView.swift in Sources */,
+				B56B2A761F1A8A1C00670B68 /* SwipeViewController.swift in Sources */,
+				B56B2A781F1A8A3800670B68 /* DraggableView.swift in Sources */,
 				B58F49391F140FE100CC8D2F /* CategoryTableViewCell.swift in Sources */,
 				B58F493B1F1412B800CC8D2F /* CategoryTableViewController.swift in Sources */,
 				B58F493D1F14142500CC8D2F /* Category.swift in Sources */,
