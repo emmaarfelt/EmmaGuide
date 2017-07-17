@@ -1,9 +1,9 @@
 //
 //  DraggableView.swift
-//  TinderSwipeCardsSwift
+//  EmmaGuide
 //
-//  Created by Gao Chao on 4/30/15.
-//  Copyright (c) 2015 gcweb. All rights reserved.
+//  Created by Emma Arfelt Kock on 10/07/2017.
+//  Copyright © 2017 Emma Arfelt. All rights reserved.
 //
 
 import UIKit
@@ -24,9 +24,14 @@ class DraggableView: UIView {
     var delegate: DraggableViewDelegate!
     var panGestureRecognizer: UIPanGestureRecognizer!
     var originPoint: CGPoint!
-    var information: UILabel!
     var xFromCenter: Float!
     var yFromCenter: Float!
+    
+    var cardview: SimpleCustomView!
+    var name: UILabel!
+    var img: UIImageView!
+    var desc: UILabel!
+    
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -35,29 +40,27 @@ class DraggableView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-        self.setupView()
-
-        information = UILabel(frame: CGRect(x: 0, y: 50, width: self.frame.size.width, height: 100))
-        information.text = "no info given"
-        information.textAlignment = NSTextAlignment.center
-        information.textColor = UIColor.black
-
-        self.backgroundColor = UIColor.white
-
-        panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(DraggableView.beingDragged(_:)))
-
-        self.addGestureRecognizer(panGestureRecognizer)
-        self.addSubview(information)
-
-        xFromCenter = 0
-        yFromCenter = 0
-    }
-
-    func setupView() -> Void {
+        //MARK: Layout of subview
+        cardview =  SimpleCustomView(frame: frame)
+        self.addSubview(cardview!)
+        cardview.bindFrameToSuperviewBounds()
+        
+        self.layer.cornerRadius = 4
+        
+        name = cardview.lblTitle
+        img = cardview.image
+        desc = cardview.desc
+        
         self.layer.cornerRadius = 4;
         self.layer.shadowRadius = 3;
         self.layer.shadowOpacity = 0.2;
         self.layer.shadowOffset = CGSize(width: 1, height: 1);
+        
+        panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(DraggableView.beingDragged(_:)))
+        self.addGestureRecognizer(panGestureRecognizer)
+
+        xFromCenter = 0
+        yFromCenter = 0
     }
 
     func beingDragged(_ gestureRecognizer: UIPanGestureRecognizer) -> Void {
@@ -129,5 +132,5 @@ class DraggableView: UIView {
         })
         delegate.cardSwipedLeft(self)
     }
-
+    
 }

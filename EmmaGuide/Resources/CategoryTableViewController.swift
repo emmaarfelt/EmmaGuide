@@ -53,6 +53,7 @@ class CategoryTableViewController: UITableViewController {
         return cell
     }
     
+
     private func loadSampleMeals() {
         
         let photo1 = UIImage(named: "lunch")

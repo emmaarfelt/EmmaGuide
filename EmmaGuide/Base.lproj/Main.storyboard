@@ -90,82 +90,10 @@
             </objects>
             <point key="canvasLocation" x="-830" y="140"/>
         </scene>
-        <!--Place Swipe View Controller-->
-        <scene sceneID="2Xv-lV-Wy0">
-            <objects>
-                <viewController id="e1C-ne-qWq" customClass="PlaceSwipeViewController" customModule="EmmaGuide" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JrH-Eb-KYQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="nQ0-Pi-aID"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="zh9-eS-h9c">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A0p-pO-Yub">
-                                <rect key="frame" x="16" y="52" width="343" height="562"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hrl-Fg-bhs">
-                                        <rect key="frame" x="93" y="249" width="157" height="70"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="0.18010152284223258" blue="0.16902714997899615" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LQp-dk-Npy">
-                                <rect key="frame" x="16" y="52" width="343" height="562"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgS-0Q-qGP">
-                                        <rect key="frame" x="93" y="246" width="157" height="70"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Ave-BO-tCJ" appends="YES" id="3pR-wh-feE"/>
-                                </connections>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ib0-Wz-HuA">
-                                <rect key="frame" x="164" y="622" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="reset:" destination="e1C-ne-qWq" eventType="touchUpInside" id="UFk-oQ-IRC"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <gestureRecognizers/>
-                    </view>
-                    <connections>
-                        <outlet property="card" destination="LQp-dk-Npy" id="PhE-3f-4bv"/>
-                        <outlet property="cardText" destination="dgS-0Q-qGP" id="z2h-Uh-vpH"/>
-                        <outlet property="previewCard" destination="A0p-pO-Yub" id="VWh-6g-XaQ"/>
-                        <outlet property="previewCardText" destination="hrl-Fg-bhs" id="fRJ-dE-a06"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pF7-JS-uhp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="Ave-BO-tCJ">
-                    <connections>
-                        <action selector="swipeCard:" destination="e1C-ne-qWq" id="Y5l-qd-fqz"/>
-                    </connections>
-                </panGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="-37.600000000000001" y="139.880059970015"/>
-        </scene>
         <!--Swipe View Controller-->
         <scene sceneID="q2k-Z3-gJg">
             <objects>
-                <viewController id="nYz-xP-L4W" customClass="SwipeViewController" customModule="EmmaGuide" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SwipeRestaurants" id="nYz-xP-L4W" customClass="SwipeViewController" customModule="EmmaGuide" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rbW-Dk-YBk"/>
                         <viewControllerLayoutGuide type="bottom" id="hs3-AW-gQ0"/>
@@ -182,13 +110,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="backgroundView" destination="6RZ-F7-cAx" id="h1z-Eq-4YM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fY3-PY-tgW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="608.79999999999995" y="139.880059970015"/>
+            <point key="canvasLocation" x="-12" y="140"/>
         </scene>
     </scenes>
     <resources>
