@@ -21,6 +21,8 @@
 		B58F493D1F14142500CC8D2F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58F493C1F14142500CC8D2F /* Category.swift */; };
 		B58F49401F141D3A00CC8D2F /* Children of the Starlight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B58F493F1F141D3A00CC8D2F /* Children of the Starlight.ttf */; };
 		B58F49491F1427D000CC8D2F /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58F49481F1427D000CC8D2F /* Gradient.swift */; };
+		B59DBC9E1F210E5A004778D6 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59DBC9D1F210E5A004778D6 /* RestaurantViewController.swift */; };
+		B59DBCA71F211BB3004778D6 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = B59DBCA31F211BB3004778D6 /* FXBlurView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,10 @@
 		B58F493C1F14142500CC8D2F /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = Model/Category.swift; sourceTree = "<group>"; };
 		B58F493F1F141D3A00CC8D2F /* Children of the Starlight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Children of the Starlight.ttf"; path = "EmmaGuide/Assets.xcassets/Children of the Starlight.dataset/Children of the Starlight.ttf"; sourceTree = "<group>"; };
 		B58F49481F1427D000CC8D2F /* Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Gradient.swift; path = EmmaGuide/Resources/Gradient.swift; sourceTree = "<group>"; };
+		B59DBC9D1F210E5A004778D6 /* RestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestaurantViewController.swift; path = Resources/RestaurantViewController.swift; sourceTree = "<group>"; };
+		B59DBCA11F211BB2004778D6 /* EmmaGuide-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EmmaGuide-Bridging-Header.h"; sourceTree = "<group>"; };
+		B59DBCA21F211BB3004778D6 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
+		B59DBCA31F211BB3004778D6 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +64,7 @@
 			children = (
 				B58F49141F13D6E000CC8D2F /* EmmaGuide */,
 				B58F49131F13D6E000CC8D2F /* Products */,
-				B58F49411F141D4200CC8D2F /* Ressources */,
+				B59DBCAA1F211BDE004778D6 /* Helpers */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,10 +79,11 @@
 		B58F49141F13D6E000CC8D2F /* EmmaGuide */ = {
 			isa = PBXGroup;
 			children = (
+				B58F493E1F14176600CC8D2F /* Models */,
+				B58F49411F141D4200CC8D2F /* Ressources */,
 				B58F49291F13D83400CC8D2F /* Controllers */,
 				B58F49151F13D6E000CC8D2F /* AppDelegate.swift */,
 				B58F49191F13D6E000CC8D2F /* Main.storyboard */,
-				B58F493E1F14176600CC8D2F /* Models */,
 				B58F491C1F13D6E000CC8D2F /* Assets.xcassets */,
 				B58F491E1F13D6E000CC8D2F /* LaunchScreen.storyboard */,
 				B58F49211F13D6E000CC8D2F /* Info.plist */,
@@ -90,6 +97,7 @@
 				B56B2A771F1A8A3800670B68 /* DraggableView.swift */,
 				B56B2A751F1A8A1C00670B68 /* SwipeViewController.swift */,
 				B58F493A1F1412B800CC8D2F /* CategoryTableViewController.swift */,
+				B59DBC9D1F210E5A004778D6 /* RestaurantViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -113,6 +121,17 @@
 				B54306AC1F1D3A6B00A143E8 /* SimpleCustomView.xib */,
 			);
 			name = Ressources;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		B59DBCAA1F211BDE004778D6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B59DBCA31F211BB3004778D6 /* FXBlurView.m */,
+				B59DBCA21F211BB3004778D6 /* FXBlurView.h */,
+				B59DBCA11F211BB2004778D6 /* EmmaGuide-Bridging-Header.h */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +166,7 @@
 				TargetAttributes = {
 					B58F49111F13D6E000CC8D2F = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -190,9 +210,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B58F49161F13D6E000CC8D2F /* AppDelegate.swift in Sources */,
+				B59DBC9E1F210E5A004778D6 /* RestaurantViewController.swift in Sources */,
 				B56B2A761F1A8A1C00670B68 /* SwipeViewController.swift in Sources */,
 				B56B2A781F1A8A3800670B68 /* DraggableView.swift in Sources */,
 				B54306AE1F1D3A6B00A143E8 /* SimpleCustomView.swift in Sources */,
+				B59DBCA71F211BB3004778D6 /* FXBlurView.m in Sources */,
 				B58F49391F140FE100CC8D2F /* CategoryTableViewCell.swift in Sources */,
 				B58F493B1F1412B800CC8D2F /* CategoryTableViewController.swift in Sources */,
 				B58F493D1F14142500CC8D2F /* Category.swift in Sources */,
@@ -320,11 +342,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = EmmaGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cipherbureau.EmmaGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EmmaGuide-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -334,11 +359,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = EmmaGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cipherbureau.EmmaGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "EmmaGuide-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

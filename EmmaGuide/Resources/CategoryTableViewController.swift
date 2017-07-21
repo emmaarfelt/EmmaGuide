@@ -10,7 +10,6 @@ import UIKit
 
 class CategoryTableViewController: UITableViewController {
 
-    
     //MARK: Properties
     var categories = [Category]()
     var gradient = CAGradientLayer()
@@ -20,6 +19,7 @@ class CategoryTableViewController: UITableViewController {
         
         // Load the sample data.
         loadSampleMeals()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,6 +53,15 @@ class CategoryTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let subjectCell = tableView.cellForRow(at: indexPath) as? CategoryTableViewCell, let destinationViewController = navigationController?.storyboard?.instantiateViewController(withIdentifier: "SwipeRestaurants") as? SwipeViewController{
+            //This is a bonus, I will be showing at destionation controller the same text of the cell from where it comes...
+            destinationViewController.category = subjectCell.nameLabel.text
+            destinationViewController.bgColor = subjectCell.gradient.FirstColor
+            //Then just push the controller into the view hierarchy
+            navigationController?.pushViewController(destinationViewController, animated: true)
+        }
+    }
 
     private func loadSampleMeals() {
         

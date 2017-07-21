@@ -27,7 +27,7 @@ extension UIView {
 {
     var view:UIView!;
     
-   @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var distance: UILabel!
     @IBOutlet weak var desc: UILabel!
     @IBOutlet weak var image: UIImageView!
@@ -46,6 +46,7 @@ extension UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.layer.cornerRadius = 4
         loadViewFromNib ()
     }
     
@@ -62,6 +63,7 @@ extension UIView {
         self.addSubview(view)
         self.layer.cornerRadius = 4
     }
+
 
     
 }

@@ -16,13 +16,13 @@ let ROTATION_STRENGTH: Float = 320  //%%% strength of rotation. Higher = weaker 
 let ROTATION_ANGLE: Float = 3.14/8  //%%% Higher = stronger rotation angle
 
 protocol DraggableViewDelegate {
-    func cardSwipedLeft(_ card: UIView) -> Void
-    func cardSwipedRight(_ card: UIView) -> Void
+    func cardSwiped(_ card: UIView) -> Void
 }
 
 class DraggableView: UIView {
     var delegate: DraggableViewDelegate!
     var panGestureRecognizer: UIPanGestureRecognizer!
+    var tapGestrueRecognizer: UITapGestureRecognizer!
     var originPoint: CGPoint!
     var xFromCenter: Float!
     var yFromCenter: Float!
@@ -45,24 +45,21 @@ class DraggableView: UIView {
         self.addSubview(cardview!)
         cardview.bindFrameToSuperviewBounds()
         
-        self.layer.cornerRadius = 4
         
         name = cardview.lblTitle
         img = cardview.image
         desc = cardview.desc
         
-        self.layer.cornerRadius = 4;
-        self.layer.shadowRadius = 3;
-        self.layer.shadowOpacity = 0.2;
-        self.layer.shadowOffset = CGSize(width: 1, height: 1);
-        
+        tapGestrueRecognizer = UITapGestureRecognizer(target: self, action: #selector(DraggableView.beingTapped(_:)))
         panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(DraggableView.beingDragged(_:)))
         self.addGestureRecognizer(panGestureRecognizer)
+        self.addGestureRecognizer(tapGestrueRecognizer)
 
         xFromCenter = 0
         yFromCenter = 0
     }
-
+    
+    
     func beingDragged(_ gestureRecognizer: UIPanGestureRecognizer) -> Void {
         xFromCenter = Float(gestureRecognizer.translation(in: self).x)
         yFromCenter = Float(gestureRecognizer.translation(in: self).y)
@@ -118,7 +115,7 @@ class DraggableView: UIView {
                 (value: Bool) in
                 self.removeFromSuperview()
         })
-        delegate.cardSwipedRight(self)
+        delegate.cardSwiped(self)
     }
 
     func leftAction() -> Void {
@@ -130,7 +127,12 @@ class DraggableView: UIView {
                 (value: Bool) in
                 self.removeFromSuperview()
         })
-        delegate.cardSwipedLeft(self)
+        delegate.cardSwiped(self)
     }
+    
+    func beingTapped(_ gestureRecognizer: UITapGestureRecognizer) -> Void {
+        print("tapped")
+    }
+
     
 }

@@ -8,32 +8,36 @@
 
 import UIKit
 
-let MAX_BUFFER_SIZE = 2
+let MAX_BUFFER_SIZE = 3
 let CARD_HEIGHT: CGFloat = 426
 let CARD_WIDTH: CGFloat = 290
 
 class SwipeViewController: UIViewController, DraggableViewDelegate {
 
     @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var catName: UILabel!
+    @IBAction func back(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    var category: String?
+    var bgColor: UIColor!
+    
     
     var allCards: [DraggableView]!
     
     var restaurants = [Restaurants]()
-    
     var cardsLoadedIndex: Int!
     var loadedCards: [DraggableView]!
-    
-    init(bgcolor: UIColor) {
-        backgroundView.backgroundColor = bgcolor
-        super.init(nibName: nil, bundle: nil)
-    }
     
     required init?(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder);
     }
     
+    
     override func viewDidLoad() {
+        self.view.layoutIfNeeded()
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         loadSampleMeals()
@@ -41,8 +45,11 @@ class SwipeViewController: UIViewController, DraggableViewDelegate {
         loadedCards = []
         cardsLoadedIndex = 0
         loadCards()
+        catName.text = category
+        self.view.backgroundColor = bgColor
     }
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -73,27 +80,18 @@ class SwipeViewController: UIViewController, DraggableViewDelegate {
             }
             
             for i in 0 ..< loadedCards.count {
-                if i > 0 {
-                    backgroundView.insertSubview(loadedCards[i], belowSubview: loadedCards[i - 1])
-                } else {
+                switch i {
+                case 0:
                     backgroundView.addSubview(loadedCards[i])
+                default:
+                    backgroundView.insertSubview(loadedCards[i], belowSubview: loadedCards[i - 1])
                 }
                 cardsLoadedIndex = cardsLoadedIndex + 1
             }
         }
     }
     
-    func cardSwipedLeft(_ card: UIView) -> Void {
-        loadedCards.remove(at: 0)
-        
-        if cardsLoadedIndex < allCards.count {
-            loadedCards.append(allCards[cardsLoadedIndex])
-            cardsLoadedIndex = cardsLoadedIndex + 1
-            backgroundView.insertSubview(loadedCards[MAX_BUFFER_SIZE - 1], belowSubview: loadedCards[MAX_BUFFER_SIZE - 2])
-        }
-    }
-    
-    func cardSwipedRight(_ card: UIView) -> Void {
+    func cardSwiped(_ card: UIView) -> Void {
         loadedCards.remove(at: 0)
         
         if cardsLoadedIndex < allCards.count {
