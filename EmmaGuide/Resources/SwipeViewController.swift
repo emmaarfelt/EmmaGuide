@@ -64,6 +64,7 @@ class SwipeViewController: UIViewController, DraggableViewDelegate {
         draggableView.name.text = restaurants[index].name
         draggableView.img.image = restaurants[index].photo
         draggableView.desc.text = restaurants[index].desc
+        
         draggableView.delegate = self
         return draggableView
     }
@@ -100,6 +101,16 @@ class SwipeViewController: UIViewController, DraggableViewDelegate {
             backgroundView.insertSubview(loadedCards[MAX_BUFFER_SIZE - 1], belowSubview: loadedCards[MAX_BUFFER_SIZE - 2])
         }
     }
+    
+    func cardTapped(_ card: UIView) {
+        if let subjectCard = card as? DraggableView, let destinationViewController = navigationController?.storyboard?.instantiateViewController(withIdentifier: "RestaurantView") as? RestaurantViewController{
+            
+            destinationViewController.restaurant = Restaurants(name: subjectCard.name.text!, photo: subjectCard.img.image, desc: subjectCard.desc.text!)
+            
+            navigationController?.pushViewController(destinationViewController, animated: true)
+        }
+    }
+    
     
     private func loadSampleMeals() {
         

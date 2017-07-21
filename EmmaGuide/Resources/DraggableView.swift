@@ -17,6 +17,7 @@ let ROTATION_ANGLE: Float = 3.14/8  //%%% Higher = stronger rotation angle
 
 protocol DraggableViewDelegate {
     func cardSwiped(_ card: UIView) -> Void
+    func cardTapped(_ card: UIView) -> Void
 }
 
 class DraggableView: UIView {
@@ -50,8 +51,8 @@ class DraggableView: UIView {
         img = cardview.image
         desc = cardview.desc
         
-        tapGestrueRecognizer = UITapGestureRecognizer(target: self, action: #selector(DraggableView.beingTapped(_:)))
-        panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(DraggableView.beingDragged(_:)))
+        tapGestrueRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.beingTapped(_:)))
+        panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.beingDragged(_:)))
         self.addGestureRecognizer(panGestureRecognizer)
         self.addGestureRecognizer(tapGestrueRecognizer)
 
@@ -132,7 +133,7 @@ class DraggableView: UIView {
     
     func beingTapped(_ gestureRecognizer: UITapGestureRecognizer) -> Void {
         print("tapped")
+        delegate.cardTapped(self)
     }
-
     
 }

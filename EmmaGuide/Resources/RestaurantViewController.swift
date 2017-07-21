@@ -17,26 +17,37 @@ class RestaurantViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var blackLabel: UILabel!
     @IBOutlet var header:UIView!
     @IBOutlet var headerLabel:UILabel!
-    var headerImageView:UIImageView!
+    @IBOutlet var headerImageView:UIImageView!
     var headerBlurImageView:UIImageView!
     var blurredHeaderImageView:UIImageView?
+    
+    var restaurant:Restaurants!
+    
+    @IBOutlet weak var backButton: UIButton!
+    @IBAction func back(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.delegate = self
+        blackLabel.text = restaurant.name
+        headerLabel.text = restaurant.name
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
         // Header - Image
         headerImageView = UIImageView(frame: header.bounds)
-        headerImageView?.image = UIImage(named: "dinner")
+        headerImageView?.image = restaurant.photo
         headerImageView?.contentMode = UIViewContentMode.scaleAspectFill
         header.insertSubview(headerImageView, belowSubview: headerLabel)
         
         // Header - Blurred Image
         headerBlurImageView = UIImageView(frame: header.bounds)
-        headerBlurImageView?.image = UIImage(named: "dinner")?.blurredImage(withRadius: 10, iterations: 20, tintColor: UIColor.clear)
+        headerBlurImageView?.image = restaurant.photo?.blurredImage(withRadius: 10, iterations: 20, tintColor: UIColor.clear)
         headerBlurImageView?.contentMode = UIViewContentMode.scaleAspectFill
         headerBlurImageView?.alpha = 0.0
         header.insertSubview(headerBlurImageView, belowSubview: headerLabel)
@@ -83,7 +94,8 @@ class RestaurantViewController: UIViewController, UIScrollViewDelegate {
                 
             }else {
                 if blackLabel.layer.zPosition >= header.layer.zPosition{
-                    header.layer.zPosition = 2
+                    header.layer.zPosition = 1
+                    backButton.layer.zPosition = 2
                 }
             }
         }
