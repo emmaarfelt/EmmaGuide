@@ -16,7 +16,6 @@ class CategoryTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Load the sample data.
         loadSampleMeals()
         

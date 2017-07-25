@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B52A14BA1F23658200B36232 /* DinnerrestaurantIDs.txt in Resources */ = {isa = PBXBuildFile; fileRef = B52A14B91F23658200B36232 /* DinnerrestaurantIDs.txt */; };
 		B54306AE1F1D3A6B00A143E8 /* SimpleCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54306AB1F1D3A6B00A143E8 /* SimpleCustomView.swift */; };
 		B54306AF1F1D3A6B00A143E8 /* SimpleCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54306AC1F1D3A6B00A143E8 /* SimpleCustomView.xib */; };
 		B54306B11F1D47A600A143E8 /* Restaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54306B01F1D47A600A143E8 /* Restaurants.swift */; };
@@ -23,9 +24,11 @@
 		B58F49491F1427D000CC8D2F /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58F49481F1427D000CC8D2F /* Gradient.swift */; };
 		B59DBC9E1F210E5A004778D6 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59DBC9D1F210E5A004778D6 /* RestaurantViewController.swift */; };
 		B59DBCA71F211BB3004778D6 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = B59DBCA31F211BB3004778D6 /* FXBlurView.m */; };
+		B5DE8D121F226FA5005503E0 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DE8D111F226FA5005503E0 /* APICaller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B52A14B91F23658200B36232 /* DinnerrestaurantIDs.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = DinnerrestaurantIDs.txt; path = Model/DinnerrestaurantIDs.txt; sourceTree = "<group>"; };
 		B54306AB1F1D3A6B00A143E8 /* SimpleCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SimpleCustomView.swift; path = EmmaGuide/Resources/SimpleCustomView.swift; sourceTree = "<group>"; };
 		B54306AC1F1D3A6B00A143E8 /* SimpleCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SimpleCustomView.xib; path = EmmaGuide/Resources/SimpleCustomView.xib; sourceTree = "<group>"; };
 		B54306B01F1D47A600A143E8 /* Restaurants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Restaurants.swift; path = Model/Restaurants.swift; sourceTree = "<group>"; };
@@ -46,6 +49,7 @@
 		B59DBCA11F211BB2004778D6 /* EmmaGuide-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EmmaGuide-Bridging-Header.h"; sourceTree = "<group>"; };
 		B59DBCA21F211BB3004778D6 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
 		B59DBCA31F211BB3004778D6 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
+		B5DE8D111F226FA5005503E0 /* APICaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APICaller.swift; path = Model/APICaller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 			children = (
 				B58F493C1F14142500CC8D2F /* Category.swift */,
 				B54306B01F1D47A600A143E8 /* Restaurants.swift */,
+				B5DE8D111F226FA5005503E0 /* APICaller.swift */,
+				B52A14B91F23658200B36232 /* DinnerrestaurantIDs.txt */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -166,7 +172,8 @@
 				TargetAttributes = {
 					B58F49111F13D6E000CC8D2F = {
 						CreatedOnToolsVersion = 8.3.3;
-						LastSwiftMigration = 0830;
+						DevelopmentTeam = R3Q4922W73;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -194,6 +201,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B52A14BA1F23658200B36232 /* DinnerrestaurantIDs.txt in Resources */,
 				B58F49201F13D6E000CC8D2F /* LaunchScreen.storyboard in Resources */,
 				B54306AF1F1D3A6B00A143E8 /* SimpleCustomView.xib in Resources */,
 				B58F491D1F13D6E000CC8D2F /* Assets.xcassets in Resources */,
@@ -216,6 +224,7 @@
 				B54306AE1F1D3A6B00A143E8 /* SimpleCustomView.swift in Sources */,
 				B59DBCA71F211BB3004778D6 /* FXBlurView.m in Sources */,
 				B58F49391F140FE100CC8D2F /* CategoryTableViewCell.swift in Sources */,
+				B5DE8D121F226FA5005503E0 /* APICaller.swift in Sources */,
 				B58F493B1F1412B800CC8D2F /* CategoryTableViewController.swift in Sources */,
 				B58F493D1F14142500CC8D2F /* Category.swift in Sources */,
 				B54306B11F1D47A600A143E8 /* Restaurants.swift in Sources */,
@@ -343,6 +352,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = R3Q4922W73;
 				INFOPLIST_FILE = EmmaGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -350,7 +360,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "EmmaGuide-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -360,13 +371,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = R3Q4922W73;
 				INFOPLIST_FILE = EmmaGuide/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cipherbureau.EmmaGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "EmmaGuide-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
