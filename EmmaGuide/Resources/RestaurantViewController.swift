@@ -47,7 +47,7 @@ class RestaurantViewController: UIViewController, UIScrollViewDelegate {
         
         // Header - Blurred Image
         headerBlurImageView = UIImageView(frame: header.bounds)
-        headerBlurImageView?.image = restaurant.photo?.blurredImage(withRadius: 10, iterations: 20, tintColor: UIColor.clear)
+        headerBlurImageView?.image = restaurant.photo.blurredImage(withRadius: 10, iterations: 20, tintColor: UIColor.clear)
         headerBlurImageView?.contentMode = UIViewContentMode.scaleAspectFill
         headerBlurImageView?.alpha = 0.0
         header.insertSubview(headerBlurImageView, belowSubview: headerLabel)

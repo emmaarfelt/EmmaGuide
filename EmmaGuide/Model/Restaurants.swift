@@ -14,12 +14,15 @@ class Restaurants {
     //MARK: Properties
     
     var name: String
-    var photo: UIImage?
-    var desc: String
+    var formatted_address: String
+    var website: String
+    var location : (Float,Float)
+    var opening_hours: [String]
+    var photo: UIImage
     
     //MARK: Initialization
     
-    init?(name: String, photo: UIImage?, desc: String) {
+    init?(name: String, formatted_address: String, website: String, location: (Float, Float), opening_hours: [String], photo: UIImage) {
         
         // The name must not be empty
         guard !name.isEmpty else {
@@ -28,8 +31,11 @@ class Restaurants {
         
         // Initialize stored properties.
         self.name = name
+        self.formatted_address = formatted_address
+        self.website = website
+        self.location = location
+        self.opening_hours = opening_hours
         self.photo = photo
-        self.desc = desc
     }
     
 }

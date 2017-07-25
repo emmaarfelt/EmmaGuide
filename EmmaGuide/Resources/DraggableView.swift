@@ -33,6 +33,8 @@ class DraggableView: UIView {
     var img: UIImageView!
     var desc: UILabel!
     
+    var rest: Restaurants! 
+    
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -61,7 +63,7 @@ class DraggableView: UIView {
     }
     
     
-    func beingDragged(_ gestureRecognizer: UIPanGestureRecognizer) -> Void {
+    @objc func beingDragged(_ gestureRecognizer: UIPanGestureRecognizer) -> Void {
         xFromCenter = Float(gestureRecognizer.translation(in: self).x)
         yFromCenter = Float(gestureRecognizer.translation(in: self).y)
         
@@ -131,7 +133,7 @@ class DraggableView: UIView {
         delegate.cardSwiped(self)
     }
     
-    func beingTapped(_ gestureRecognizer: UITapGestureRecognizer) -> Void {
+    @objc func beingTapped(_ gestureRecognizer: UITapGestureRecognizer) -> Void {
         print("tapped")
         delegate.cardTapped(self)
     }

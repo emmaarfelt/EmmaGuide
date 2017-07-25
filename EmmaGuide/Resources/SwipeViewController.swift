@@ -23,7 +23,6 @@ class SwipeViewController: UIViewController, DraggableViewDelegate {
     var category: String?
     var bgColor: UIColor!
     
-    
     var allCards: [DraggableView]!
     
     var restaurants = [Restaurants]()
@@ -40,7 +39,7 @@ class SwipeViewController: UIViewController, DraggableViewDelegate {
         self.view.layoutIfNeeded()
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        loadSampleMeals()
+        loadSampleMeals(category: category!)
         allCards = []
         loadedCards = []
         cardsLoadedIndex = 0
@@ -61,9 +60,10 @@ class SwipeViewController: UIViewController, DraggableViewDelegate {
     
     func createDraggableViewWithDataAtIndex(_ index: NSInteger) -> DraggableView {
         let draggableView = DraggableView(frame: CGRect(x: (backgroundView.frame.size.width - CARD_WIDTH)/2, y: (backgroundView.frame.size.height - CARD_HEIGHT)/2, width: CARD_WIDTH, height: CARD_HEIGHT))
+        draggableView.rest = restaurants[index]
         draggableView.name.text = restaurants[index].name
         draggableView.img.image = restaurants[index].photo
-        draggableView.desc.text = restaurants[index].desc
+        draggableView.desc.text = restaurants[index].formatted_address
         
         draggableView.delegate = self
         return draggableView
@@ -105,14 +105,14 @@ class SwipeViewController: UIViewController, DraggableViewDelegate {
     func cardTapped(_ card: UIView) {
         if let subjectCard = card as? DraggableView, let destinationViewController = navigationController?.storyboard?.instantiateViewController(withIdentifier: "RestaurantView") as? RestaurantViewController{
             
-            destinationViewController.restaurant = Restaurants(name: subjectCard.name.text!, photo: subjectCard.img.image, desc: subjectCard.desc.text!)
+            destinationViewController.restaurant = subjectCard.rest!
             
             navigationController?.pushViewController(destinationViewController, animated: true)
         }
     }
     
     
-    private func loadSampleMeals() {
+    /*private func loadSampleMeals() {
         
         let photo1 = UIImage(named: "lunch")
         let photo2 = UIImage(named: "dinner")
@@ -136,6 +136,27 @@ class SwipeViewController: UIViewController, DraggableViewDelegate {
         }
         
         restaurants += [meal1, meal2, meal3, meal4]
+    }*/
+    
+    func loadSampleMeals(category: String) -> Void {
+        var restaurantsIds = [String]()
+        if let path = Bundle.main.path(forResource: "\(category)restaurantIDs", ofType: "txt") {
+    
+            let contents = try! String(contentsOfFile: path)
+            let lines = contents.components(separatedBy: "\n")
+            for line in lines {
+                if line == "" { break }
+                let nline = line.components(separatedBy: ":")[1]
+                restaurantsIds.append(nline)
+            }
+        } else {
+            print("File not found")
+        }
+        
+        for restID in restaurantsIds {
+            let restaurant = APICaller().createRestaurant(placeId: restID)
+            restaurants.append(restaurant)
+        }
     }
 
     
