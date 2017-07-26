@@ -32,6 +32,7 @@ class DraggableView: UIView {
     var name: UILabel!
     var img: UIImageView!
     var desc: UILabel!
+    var distance: UILabel!
     
     var rest: Restaurants! 
     
@@ -52,6 +53,7 @@ class DraggableView: UIView {
         name = cardview.lblTitle
         img = cardview.image
         desc = cardview.desc
+        distance = cardview.distance
         
         tapGestrueRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.beingTapped(_:)))
         panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(self.beingDragged(_:)))
@@ -134,7 +136,6 @@ class DraggableView: UIView {
     }
     
     @objc func beingTapped(_ gestureRecognizer: UITapGestureRecognizer) -> Void {
-        print("tapped")
         delegate.cardTapped(self)
     }
     

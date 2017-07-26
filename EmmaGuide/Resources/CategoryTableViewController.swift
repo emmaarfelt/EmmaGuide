@@ -19,8 +19,9 @@ class CategoryTableViewController: UITableViewController {
         // Load the sample data.
         loadSampleMeals()
         
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -60,6 +61,7 @@ class CategoryTableViewController: UITableViewController {
             //Then just push the controller into the view hierarchy
             navigationController?.pushViewController(destinationViewController, animated: true)
         }
+
     }
 
     private func loadSampleMeals() {
