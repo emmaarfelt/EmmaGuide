@@ -21,11 +21,12 @@
         <!--Navigation Controller-->
         <scene sceneID="8NT-Nv-vxg">
             <objects>
-                <navigationController navigationBarHidden="YES" id="PY8-vY-FDM" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="PY8-vY-FDM" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qqu-er-PUK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.0"/>
                     </navigationBar>
                     <connections>
                         <segue destination="BNv-RB-kQ6" kind="relationship" relationship="rootViewController" id="4jF-ox-oMf"/>
@@ -43,6 +44,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.039683274924755096" green="0.22197893261909485" blue="0.27561217546463013" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryTableViewCell" rowHeight="170" id="RA1-B4-PWa" customClass="CategoryTableViewCell" customModule="EmmaGuide" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="170"/>

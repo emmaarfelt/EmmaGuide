@@ -40,14 +40,14 @@ class APICaller {
     }
 
     func fetchRestaurantDetails(placeId: String) -> Restaurant? {
-        let jsonURLString = "https://maps.googleapis.com/maps/api/place/details/json?placeid=\(placeId)&key=AIzaSyDr98H9_ovlc25tjjPtJDDOw00FcNepCEY&language=da"
+        let jsonURLString = "https://maps.googleapis.com/maps/api/place/details/json?placeid=\(placeId)&key=KEY&language=da"
         guard let url = URL(string: jsonURLString) else { return nil}
         
         // set up the session
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
         
-        let (data, response, error) = session.synchronousDataTask(with: url)
+        let (data, _, error) = session.synchronousDataTask(with: url)
         
         guard error == nil else {
             print("error calling GET")
@@ -72,7 +72,7 @@ class APICaller {
     
     func fetchRestaurantPhoto(photos: [Photo]) -> UIImage? {
         let photoRef = photos[0].photo_reference
-        let jsonURLString = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=\(photoRef)&key=AIzaSyDr98H9_ovlc25tjjPtJDDOw00FcNepCEY"
+        let jsonURLString = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=\(photoRef)&key=KEY"
         guard let url = URL(string: jsonURLString) else {return nil  }
         
         // set up the session
