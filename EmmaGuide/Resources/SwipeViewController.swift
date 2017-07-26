@@ -35,11 +35,13 @@ class SwipeViewController: UIViewController, DraggableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Setup view to align with Category
         self.view.backgroundColor = viewCategory.color!.withAlphaComponent(1.0)
         catName.text = viewCategory.name
         restaurants = viewCategory.entities
         
-        // Do any additional setup after loading the view, typically from a nib.
+        // Setup cards
         allCards = []
         loadedCards = []
         cardsLoadedIndex = 0
@@ -115,6 +117,10 @@ class SwipeViewController: UIViewController, DraggableViewDelegate {
             
             navigationController?.pushViewController(destinationViewController, animated: true)
         }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return UIStatusBarStyle.lightContent
     }
     
 }
