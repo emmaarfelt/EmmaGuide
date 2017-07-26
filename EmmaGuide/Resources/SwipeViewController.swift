@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 let MAX_BUFFER_SIZE = 3
 let CARD_HEIGHT: CGFloat = 426
@@ -28,6 +29,7 @@ class SwipeViewController: UIViewController, DraggableViewDelegate {
     var restaurants = [Restaurants]()
     var cardsLoadedIndex: Int!
     var loadedCards: [DraggableView]!
+    
     
     required init?(coder aDecoder: NSCoder)
     {
@@ -60,10 +62,19 @@ class SwipeViewController: UIViewController, DraggableViewDelegate {
     
     func createDraggableViewWithDataAtIndex(_ index: NSInteger) -> DraggableView {
         let draggableView = DraggableView(frame: CGRect(x: (backgroundView.frame.size.width - CARD_WIDTH)/2, y: (backgroundView.frame.size.height - CARD_HEIGHT)/2, width: CARD_WIDTH, height: CARD_HEIGHT))
+        
+        draggableView.layer.shadowRadius = 5;
+        draggableView.layer.shadowOpacity = 0.2;
+        draggableView.layer.shadowOffset = CGSize(width: 1, height: 1)
+        draggableView.layer.shadowColor = UIColor(red:0.79, green:0.82, blue:0.82, alpha:1.0).cgColor
+        
         draggableView.rest = restaurants[index]
         draggableView.name.text = restaurants[index].name
         draggableView.img.image = restaurants[index].photo
         draggableView.desc.text = restaurants[index].formatted_address
+        
+        let distance = (calculateDistance(restaurant: draggableView.rest) / 1000).roundTo(places: 1)
+        draggableView.distance.text = "\(distance) kilometer"
         
         draggableView.delegate = self
         return draggableView
@@ -111,33 +122,6 @@ class SwipeViewController: UIViewController, DraggableViewDelegate {
         }
     }
     
-    
-    /*private func loadSampleMeals() {
-        
-        let photo1 = UIImage(named: "lunch")
-        let photo2 = UIImage(named: "dinner")
-        let photo3 = UIImage(named: "brunch")
-        let photo4 = UIImage(named: "cocktails")
-        
-        guard let meal1 = Restaurants(name: "Cofoco", photo: photo1, desc: "ie giuhr ksdfud sdhudschsdc") else {
-            fatalError("Unable to instantiate meal1")
-        }
-        
-        guard let meal2 = Restaurants(name: "Grillen", photo: photo2, desc: "ie giuhr ksdfud sdhudschsdc") else {
-            fatalError("Unable to instantiate meal1")
-        }
-        
-        guard let meal3 = Restaurants(name: "Amager", photo: photo3, desc: "ie gia usdhfisd fsdjhsushdusd hsjh dschsdc") else {
-            fatalError("Unable to instantiate meal1")
-        }
-        
-        guard let meal4 = Restaurants(name: "Crhsitrghu", photo: photo4, desc: "ie giuhr ksdfud sdhudschsdc") else {
-            fatalError("Unable to instantiate meal1")
-        }
-        
-        restaurants += [meal1, meal2, meal3, meal4]
-    }*/
-    
     func loadSampleMeals(category: String) -> Void {
         var restaurantsIds = [String]()
         if let path = Bundle.main.path(forResource: "\(category)restaurantIDs", ofType: "txt") {
@@ -155,10 +139,17 @@ class SwipeViewController: UIViewController, DraggableViewDelegate {
         
         for restID in restaurantsIds {
             let restaurant = APICaller().createRestaurant(placeId: restID)
-            restaurants.append(restaurant)
+            if restaurant == nil { break; }
+            restaurants.append(restaurant!)
         }
     }
-
+    
+    func calculateDistance(restaurant: Restaurants) -> CLLocationDistance {
+        let currentCoordinate = CLLocation(latitude: CLLocationDegrees(25.663345), longitude: CLLocationDegrees(12.598526))
+        let restCoordinate = CLLocation(latitude: CLLocationDegrees(restaurant.location.0), longitude: CLLocationDegrees(restaurant.location.1))
+        
+        return currentCoordinate.distance(from: restCoordinate)
+    }
     
 }
 

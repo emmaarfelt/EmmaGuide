@@ -13,15 +13,20 @@
 		B54306B11F1D47A600A143E8 /* Restaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54306B01F1D47A600A143E8 /* Restaurants.swift */; };
 		B56B2A761F1A8A1C00670B68 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56B2A751F1A8A1C00670B68 /* SwipeViewController.swift */; };
 		B56B2A781F1A8A3800670B68 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56B2A771F1A8A3800670B68 /* DraggableView.swift */; };
+		B58CC7151F27A2D1003B6BA2 /* OpeningHoursView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B58CC7141F27A2D1003B6BA2 /* OpeningHoursView.xib */; };
+		B58CC7171F27A36A003B6BA2 /* OpeningHoursView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58CC7161F27A36A003B6BA2 /* OpeningHoursView.swift */; };
 		B58F49161F13D6E000CC8D2F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58F49151F13D6E000CC8D2F /* AppDelegate.swift */; };
 		B58F491B1F13D6E000CC8D2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B58F49191F13D6E000CC8D2F /* Main.storyboard */; };
-		B58F491D1F13D6E000CC8D2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B58F491C1F13D6E000CC8D2F /* Assets.xcassets */; };
 		B58F49201F13D6E000CC8D2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B58F491E1F13D6E000CC8D2F /* LaunchScreen.storyboard */; };
 		B58F49391F140FE100CC8D2F /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58F49381F140FE100CC8D2F /* CategoryTableViewCell.swift */; };
 		B58F493B1F1412B800CC8D2F /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58F493A1F1412B800CC8D2F /* CategoryTableViewController.swift */; };
 		B58F493D1F14142500CC8D2F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58F493C1F14142500CC8D2F /* Category.swift */; };
 		B58F49401F141D3A00CC8D2F /* Children of the Starlight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B58F493F1F141D3A00CC8D2F /* Children of the Starlight.ttf */; };
 		B58F49491F1427D000CC8D2F /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58F49481F1427D000CC8D2F /* Gradient.swift */; };
+		B59539611F2809240031739D /* Double_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59539601F2809240031739D /* Double_Extensions.swift */; };
+		B59539641F280AF30031739D /* UIView_extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59539631F280AF30031739D /* UIView_extensions.swift */; };
+		B59539661F280B290031739D /* URLSession_extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59539651F280B290031739D /* URLSession_extensions.swift */; };
+		B59539681F280BD50031739D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B59539671F280BD50031739D /* Images.xcassets */; };
 		B59DBC9E1F210E5A004778D6 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B59DBC9D1F210E5A004778D6 /* RestaurantViewController.swift */; };
 		B59DBCA71F211BB3004778D6 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = B59DBCA31F211BB3004778D6 /* FXBlurView.m */; };
 		B5DE8D121F226FA5005503E0 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DE8D111F226FA5005503E0 /* APICaller.swift */; };
@@ -34,21 +39,26 @@
 		B54306B01F1D47A600A143E8 /* Restaurants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Restaurants.swift; path = Model/Restaurants.swift; sourceTree = "<group>"; };
 		B56B2A751F1A8A1C00670B68 /* SwipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwipeViewController.swift; path = Resources/SwipeViewController.swift; sourceTree = "<group>"; };
 		B56B2A771F1A8A3800670B68 /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DraggableView.swift; path = Resources/DraggableView.swift; sourceTree = "<group>"; };
+		B58CC7141F27A2D1003B6BA2 /* OpeningHoursView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = OpeningHoursView.xib; path = EmmaGuide/Resources/OpeningHoursView.xib; sourceTree = "<group>"; };
+		B58CC7161F27A36A003B6BA2 /* OpeningHoursView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OpeningHoursView.swift; path = EmmaGuide/Resources/OpeningHoursView.swift; sourceTree = "<group>"; };
 		B58F49121F13D6E000CC8D2F /* EmmaGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmmaGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B58F49151F13D6E000CC8D2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B58F491A1F13D6E000CC8D2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B58F491C1F13D6E000CC8D2F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B58F491F1F13D6E000CC8D2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B58F49211F13D6E000CC8D2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B58F49381F140FE100CC8D2F /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryTableViewCell.swift; path = EmmaGuide/Resources/CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		B58F493A1F1412B800CC8D2F /* CategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryTableViewController.swift; path = Resources/CategoryTableViewController.swift; sourceTree = "<group>"; };
 		B58F493C1F14142500CC8D2F /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Category.swift; path = Model/Category.swift; sourceTree = "<group>"; };
-		B58F493F1F141D3A00CC8D2F /* Children of the Starlight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Children of the Starlight.ttf"; path = "EmmaGuide/Assets.xcassets/Children of the Starlight.dataset/Children of the Starlight.ttf"; sourceTree = "<group>"; };
+		B58F493F1F141D3A00CC8D2F /* Children of the Starlight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Children of the Starlight.ttf"; path = "EmmaGuide.xcodeproj/Assets.xcassets/Children of the Starlight.dataset/Children of the Starlight.ttf"; sourceTree = "<group>"; };
 		B58F49481F1427D000CC8D2F /* Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Gradient.swift; path = EmmaGuide/Resources/Gradient.swift; sourceTree = "<group>"; };
+		B59539601F2809240031739D /* Double_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double_Extensions.swift; sourceTree = "<group>"; };
+		B59539631F280AF30031739D /* UIView_extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView_extensions.swift; sourceTree = "<group>"; };
+		B59539651F280B290031739D /* URLSession_extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSession_extensions.swift; sourceTree = "<group>"; };
+		B59539671F280BD50031739D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B59DBC9D1F210E5A004778D6 /* RestaurantViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RestaurantViewController.swift; path = Resources/RestaurantViewController.swift; sourceTree = "<group>"; };
-		B59DBCA11F211BB2004778D6 /* EmmaGuide-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EmmaGuide-Bridging-Header.h"; sourceTree = "<group>"; };
-		B59DBCA21F211BB3004778D6 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
-		B59DBCA31F211BB3004778D6 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
+		B59DBCA11F211BB2004778D6 /* EmmaGuide-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "EmmaGuide-Bridging-Header.h"; path = "EmmaGuide/Helpers/EmmaGuide-Bridging-Header.h"; sourceTree = "<group>"; };
+		B59DBCA21F211BB3004778D6 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FXBlurView.h; path = EmmaGuide/Helpers/FXBlurView.h; sourceTree = "<group>"; };
+		B59DBCA31F211BB3004778D6 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FXBlurView.m; path = EmmaGuide/Helpers/FXBlurView.m; sourceTree = "<group>"; };
 		B5DE8D111F226FA5005503E0 /* APICaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APICaller.swift; path = Model/APICaller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +78,7 @@
 			children = (
 				B58F49141F13D6E000CC8D2F /* EmmaGuide */,
 				B58F49131F13D6E000CC8D2F /* Products */,
+				B59539671F280BD50031739D /* Images.xcassets */,
 				B59DBCAA1F211BDE004778D6 /* Helpers */,
 			);
 			sourceTree = "<group>";
@@ -85,10 +96,10 @@
 			children = (
 				B58F493E1F14176600CC8D2F /* Models */,
 				B58F49411F141D4200CC8D2F /* Ressources */,
+				B59539621F280A620031739D /* Extensions */,
 				B58F49291F13D83400CC8D2F /* Controllers */,
 				B58F49151F13D6E000CC8D2F /* AppDelegate.swift */,
 				B58F49191F13D6E000CC8D2F /* Main.storyboard */,
-				B58F491C1F13D6E000CC8D2F /* Assets.xcassets */,
 				B58F491E1F13D6E000CC8D2F /* LaunchScreen.storyboard */,
 				B58F49211F13D6E000CC8D2F /* Info.plist */,
 			);
@@ -124,10 +135,22 @@
 				B58F49481F1427D000CC8D2F /* Gradient.swift */,
 				B58F493F1F141D3A00CC8D2F /* Children of the Starlight.ttf */,
 				B54306AB1F1D3A6B00A143E8 /* SimpleCustomView.swift */,
+				B58CC7161F27A36A003B6BA2 /* OpeningHoursView.swift */,
 				B54306AC1F1D3A6B00A143E8 /* SimpleCustomView.xib */,
+				B58CC7141F27A2D1003B6BA2 /* OpeningHoursView.xib */,
 			);
 			name = Ressources;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		B59539621F280A620031739D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B59539601F2809240031739D /* Double_Extensions.swift */,
+				B59539651F280B290031739D /* URLSession_extensions.swift */,
+				B59539631F280AF30031739D /* UIView_extensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B59DBCAA1F211BDE004778D6 /* Helpers */ = {
@@ -202,9 +225,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B52A14BA1F23658200B36232 /* DinnerrestaurantIDs.txt in Resources */,
+				B59539681F280BD50031739D /* Images.xcassets in Resources */,
 				B58F49201F13D6E000CC8D2F /* LaunchScreen.storyboard in Resources */,
+				B58CC7151F27A2D1003B6BA2 /* OpeningHoursView.xib in Resources */,
 				B54306AF1F1D3A6B00A143E8 /* SimpleCustomView.xib in Resources */,
-				B58F491D1F13D6E000CC8D2F /* Assets.xcassets in Resources */,
 				B58F49401F141D3A00CC8D2F /* Children of the Starlight.ttf in Resources */,
 				B58F491B1F13D6E000CC8D2F /* Main.storyboard in Resources */,
 			);
@@ -219,16 +243,20 @@
 			files = (
 				B58F49161F13D6E000CC8D2F /* AppDelegate.swift in Sources */,
 				B59DBC9E1F210E5A004778D6 /* RestaurantViewController.swift in Sources */,
+				B58CC7171F27A36A003B6BA2 /* OpeningHoursView.swift in Sources */,
 				B56B2A761F1A8A1C00670B68 /* SwipeViewController.swift in Sources */,
 				B56B2A781F1A8A3800670B68 /* DraggableView.swift in Sources */,
 				B54306AE1F1D3A6B00A143E8 /* SimpleCustomView.swift in Sources */,
+				B59539641F280AF30031739D /* UIView_extensions.swift in Sources */,
 				B59DBCA71F211BB3004778D6 /* FXBlurView.m in Sources */,
 				B58F49391F140FE100CC8D2F /* CategoryTableViewCell.swift in Sources */,
 				B5DE8D121F226FA5005503E0 /* APICaller.swift in Sources */,
 				B58F493B1F1412B800CC8D2F /* CategoryTableViewController.swift in Sources */,
 				B58F493D1F14142500CC8D2F /* Category.swift in Sources */,
+				B59539661F280B290031739D /* URLSession_extensions.swift in Sources */,
 				B54306B11F1D47A600A143E8 /* Restaurants.swift in Sources */,
 				B58F49491F1427D000CC8D2F /* Gradient.swift in Sources */,
+				B59539611F2809240031739D /* Double_Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,7 +386,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cipherbureau.EmmaGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "EmmaGuide-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Helpers/EmmaGuide-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -377,7 +405,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cipherbureau.EmmaGuide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "EmmaGuide-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Helpers/EmmaGuide-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
