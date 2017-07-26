@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:Assets.xcassets"
+      name = "Assets.xcassets">
+      <FileRef
+         location = "group:../../Images.xcassets">
+      </FileRef>
+      <FileRef
+         location = "group:../../EmmaGuide/Extensions/URLSession_extensions.swift">
+      </FileRef>
+      <FileRef
+         location = "group:../../EmmaGuide/Extensions/UIView_extensions.swift">
+      </FileRef>
+      <FileRef
+         location = "group:../../EmmaGuide/Resources/Extensions.swift">
+      </FileRef>
+      <Group
+         location = "group:AppIcon.appiconset"
+         name = "AppIcon.appiconset">
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Bestik.imageset"
+         name = "Bestik.imageset">
+         <FileRef
+            location = "group:Bestik.png">
+         </FileRef>
+         <FileRef
+            location = "group:Bestik@2x.png">
+         </FileRef>
+         <FileRef
+            location = "group:Bestik@3x.png">
+         </FileRef>
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:brunch.imageset"
+         name = "brunch.imageset">
+         <FileRef
+            location = "group:brunch.png">
+         </FileRef>
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Children of the Starlight.dataset"
+         name = "Children of the Starlight.dataset">
+         <FileRef
+            location = "group:Children of the Starlight.ttf">
+         </FileRef>
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:cocktails.imageset"
+         name = "cocktails.imageset">
+         <FileRef
+            location = "group:cocktails.jpg">
+         </FileRef>
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+      </Group>
+      <FileRef
+         location = "group:Contents.json">
+      </FileRef>
+      <Group
+         location = "group:dinner.imageset"
+         name = "dinner.imageset">
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+         <FileRef
+            location = "group:dinner.jpg">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Hours.imageset"
+         name = "Hours.imageset">
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+         <FileRef
+            location = "group:Hours.png">
+         </FileRef>
+         <FileRef
+            location = "group:Hours@2x.png">
+         </FileRef>
+         <FileRef
+            location = "group:Hours@3x.png">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:lunch.imageset"
+         name = "lunch.imageset">
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+         <FileRef
+            location = "group:lunch.jpg">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Pin.imageset"
+         name = "Pin.imageset">
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+         <FileRef
+            location = "group:Pin.png">
+         </FileRef>
+         <FileRef
+            location = "group:Pin@2x.png">
+         </FileRef>
+         <FileRef
+            location = "group:Pin@3x.png">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Shape.imageset"
+         name = "Shape.imageset">
+         <FileRef
+            location = "group:Contents.json">
+         </FileRef>
+         <FileRef
+            location = "group:Shape.png">
+         </FileRef>
+         <FileRef
+            location = "group:Shape@2x.png">
+         </FileRef>
+         <FileRef
+            location = "group:Shape@3x.png">
+         </FileRef>
+      </Group>
+   </Group>
+   <FileRef
+      location = "self:">
+   </FileRef>
+</Workspace>
