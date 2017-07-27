@@ -9,29 +9,34 @@
 import UIKit
 
 let offset_HeaderStop:CGFloat = 250.0 // How much should the header move before it stops it transformation?
-let offset_B_LabelHeader:CGFloat = 280.0 // At this offset the Black label reaches the Header
+let offset_B_LabelHeader:CGFloat = 308.0 // At this offset the Black label reaches the Header
 let distance_W_LabelHeader:CGFloat = 35.0 // The distance between the bottom of the White Label and its position in the final header size (header height - HeaderStop).
 
 class RestaurantViewController: UIViewController, UIScrollViewDelegate {
+    var restaurant:Restaurants!
+    
     @IBOutlet var scrollView:UIScrollView!
     @IBOutlet weak var blackLabel: UILabel!
     @IBOutlet var header:UIView!
     @IBOutlet var headerLabel:UILabel!
     @IBOutlet var headerImageView:UIImageView!
+    
     var headerBlurImageView:UIImageView!
-    var blurredHeaderImageView:UIImageView?
     
-    var restaurant:Restaurants!
-    
+
+    @IBOutlet var infoButtons: UIView!
     @IBOutlet weak var locationView: UIView!
     @IBOutlet weak var backButton: UIButton!
     @IBAction func back(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
-   
-    @IBAction func Book(_ sender: UIButton) {
-        UIApplication.shared.openURL(URL(string: self.restaurant.website)!)
-    }
+    
+    
+    //Round bottons
+    @IBOutlet var mapLocation: UIButton!
+    @IBOutlet var hourButton: UIButton!
+    @IBOutlet var bookButton: UIButton!
+    
     
     @IBOutlet weak var Location: UILabel!
     @IBOutlet weak var Pin: UIImageView!
@@ -46,7 +51,7 @@ class RestaurantViewController: UIViewController, UIScrollViewDelegate {
         headerLabel.text = restaurant.name
         Location.text = restaurant.formatted_address
         setupLocationValues()
-        restDesc.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porttitor mollis tellus, eu bibendum ex malesuada in. Maecenas porta turpis vel tortor porttitor accumsan. Nulla mattis ipsum quis augue suscipit, quis lacinia tortor aliquam. Nunc ultrices ipsum quis sagittis iaculis. Sed sed dignissim elit. Donec finibus diam ex, id pulvinar quam fringilla id. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In hac habitasse platea dictumst. Donec volutpat semper feugiat."
+        restDesc.text = restaurant.comment
         restDesc.numberOfLines = 0
         restDesc.sizeToFit()
     }
@@ -76,6 +81,7 @@ class RestaurantViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         let offset = scrollView.contentOffset.y
+        var avatarTransform = CATransform3DIdentity
         var headerTransform = CATransform3DIdentity
         
         // PULL DOWN
@@ -116,15 +122,18 @@ class RestaurantViewController: UIViewController, UIScrollViewDelegate {
         
         // Apply Transformations
         header.layer.transform = headerTransform
+        infoButtons.layer.transform = avatarTransform
     }
     
+    @IBAction func Book(_ sender: UIButton) {
+        UIApplication.shared.openURL(URL(string: self.restaurant.website)!)
+    }
     
     @IBAction func seeOpeningHours(_ sender: UIButton) {
         //Setup View
-        let openingHoursPopUp = OpeningHoursView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width - 150 , height: (self.view.frame.height / 2)))
+        let openingHoursPopUp = OpeningHoursView(frame: CGRect(x: 0, y: 0, width: 0, height: (self.view.frame.height / 2)))
         openingHoursPopUp.center = CGPoint(x: self.view.frame.size.width  / 2, y: (self.view.frame.size.height / 2) - 50)
-        openingHoursPopUp.openingHours.center = CGPoint(x: openingHoursPopUp.center.x, y: openingHoursPopUp.center.y)
-        openingHoursPopUp.openingHours.numberOfLines = restaurant.opening_hours.count
+        openingHoursPopUp.openingHours.numberOfLines = restaurant.opening_hours.count + 1
         
         openingHoursPopUp.layer.shadowRadius = 3;
         openingHoursPopUp.layer.shadowOpacity = 0.2;
@@ -134,6 +143,10 @@ class RestaurantViewController: UIViewController, UIScrollViewDelegate {
         //Setup Text
         openingHoursPopUp.openingHours.text = getOpeningHours(hours: restaurant.opening_hours)
         openingHoursPopUp.openingHours.sizeToFit()
+        
+        //Adjust width of frame
+        openingHoursPopUp.frame = CGRect(x: 0, y: 0, width: openingHoursPopUp.openingHours.intrinsicContentSize.width + 50, height: (self.view.frame.height / 2))
+        openingHoursPopUp.center = CGPoint(x: self.view.frame.size.width  / 2, y: (self.view.frame.size.height / 2) - 50)
         
         self.view.addSubview(openingHoursPopUp)
     }
@@ -146,9 +159,21 @@ class RestaurantViewController: UIViewController, UIScrollViewDelegate {
         return allString
     }
     
+    @IBAction func seeOnMap(_ sender: UIButton) {
+        if let destinationViewController = navigationController?.storyboard?.instantiateViewController(withIdentifier: "LocationView") as? LocationController {
+            
+            destinationViewController.restaurant = self.restaurant!
+            
+            navigationController?.pushViewController(destinationViewController, animated: true)
+        }
+    }
+    
+    
+    
     func setupLocationValues() {
         self.Pin.frame = CGRect(x: (locationView.frame.size.width - Pin.frame.size.width - Location.intrinsicContentSize.width) / 2, y: Pin.frame.origin.y, width: Pin.frame.size.width, height: Pin.frame.size.height)
         self.Location.frame = CGRect(x: Pin.frame.origin.x + Pin.frame.size.width + 4, y: Location.frame.origin.y, width: Location.intrinsicContentSize.width, height: Location.frame.size.height)
+        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{

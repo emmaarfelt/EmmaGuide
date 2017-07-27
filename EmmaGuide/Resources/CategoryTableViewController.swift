@@ -17,7 +17,6 @@ class CategoryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Load the sample data.
-        LocationController().setupLocationManager()
     }
     
     override func didReceiveMemoryWarning() {
@@ -63,5 +62,8 @@ class CategoryTableViewController: UITableViewController {
         }
 
     }
-
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return UIStatusBarStyle.lightContent
+    }
 }

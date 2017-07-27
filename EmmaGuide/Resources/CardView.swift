@@ -50,6 +50,8 @@ import UIKit
         self.addSubview(view)
         view.layer.cornerRadius = 5;
         view.layer.masksToBounds = true;
+        desc.adjustsFontSizeToFitWidth = true
+
     }
 
 

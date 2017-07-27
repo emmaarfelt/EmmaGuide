@@ -9,8 +9,6 @@
 import UIKit
 
 let MAX_BUFFER_SIZE = 3
-let CARD_HEIGHT: CGFloat = 426
-let CARD_WIDTH: CGFloat = 290
 
 class SwipeViewController: UIViewController, DraggableViewDelegate {
     @IBOutlet weak var backgroundView: UIView!
@@ -25,10 +23,12 @@ class SwipeViewController: UIViewController, DraggableViewDelegate {
     
     var viewCategory: EntityCategory!
     var restaurants : [Restaurants]!
+    var CARD_HEIGHT : CGFloat!
+    var CARD_WIDTH: CGFloat!
     
     required init?(coder aDecoder: NSCoder)
     {
-        self.viewCategory = EntityCategory(name: "Default Category", photo: #imageLiteral(resourceName: "dinner"), color: UIColor.blue, entities: [])
+        //self.viewCategory = EntityCategory(name: "Default Category", photo: #imageLiteral(resourceName: "dinner"), color: UIColor.blue, entities: [])
         super.init(coder: aDecoder);
     }
     
@@ -45,8 +45,13 @@ class SwipeViewController: UIViewController, DraggableViewDelegate {
         allCards = []
         loadedCards = []
         cardsLoadedIndex = 0
-        loadCards()
         
+        
+        CARD_HEIGHT  = ((backgroundView.frame.height / 2) + (catName.frame.height * 1.7))
+        CARD_WIDTH = (backgroundView.frame.width - (catName.frame.width / 4))
+        
+        LocationController().setupLocationManager()
+        loadCards()
     }
 
     
@@ -62,16 +67,23 @@ class SwipeViewController: UIViewController, DraggableViewDelegate {
         draggableView.layer.shadowRadius = 5;
         draggableView.layer.shadowOpacity = 0.2;
         draggableView.layer.shadowOffset = CGSize(width: 1, height: 1)
-        draggableView.layer.shadowColor = UIColor(red:0.79, green:0.82, blue:0.82, alpha:1.0).cgColor
+        draggableView.layer.shadowColor = UIColor.black.cgColor
         
         //Setup Data
         draggableView.rest = restaurants[index]
-        draggableView.name.text = restaurants[index].name
-        draggableView.img.image = restaurants[index].photo
-        draggableView.desc.text = restaurants[index].formatted_address
+        draggableView.name.text = restaurants[index].name.uppercased()
+        draggableView.name.addTextSpacing(spacing: 3.0)
+        draggableView.name.adjustsFontSizeToFitWidth = true
         
-        /*let distance = (calculateDistance(restaurant: draggableView.rest) / 1000).roundTo(places: 1)
-        draggableView.distance.text = "\(distance) kilometer"*/
+        draggableView.img.image = restaurants[index].photo
+        draggableView.desc.text = restaurants[index].comment
+        draggableView.desc.addLineSpacing(spacing: 1.5)
+        
+        draggableView.desc.numberOfLines = 0
+        draggableView.sizeToFit()
+        
+        let distance = LocationController().getDistanceToRestaurant(rest: draggableView.rest)
+        draggableView.distance.text = "\(distance) kilometer"
         
         draggableView.delegate = self
         return draggableView

@@ -19,10 +19,11 @@ class Restaurants {
     var location : (Float,Float)
     var opening_hours: [String]
     var photo: UIImage
+    var comment: String
     
     //MARK: Initialization
     
-    init?(name: String, formatted_address: String, website: String, location: (Float, Float), opening_hours: [String], photo: UIImage) {
+    init?(name: String, formatted_address: String, website: String, location: (Float, Float), opening_hours: [String], photo: UIImage, comment: String) {
         
         // The name must not be empty
         guard !name.isEmpty else {
@@ -36,6 +37,7 @@ class Restaurants {
         self.location = location
         self.opening_hours = opening_hours
         self.photo = photo
+        self.comment = comment
     }
     
 }

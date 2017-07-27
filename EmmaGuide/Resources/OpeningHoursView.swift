@@ -36,6 +36,7 @@ import UIKit
         self.addSubview(view)
         view.layer.cornerRadius = 5;
         view.layer.masksToBounds = true;
+        openingHours.addLineSpacing(spacing: 2.0)
         openingHours.adjustsFontSizeToFitWidth = true
         
     }

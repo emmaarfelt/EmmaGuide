@@ -12,3 +12,14 @@ mother:ChIJyw-diHNTUkYRKrUmhof81iQ:Test:Dinner
 Llama:ChIJ_0zz5A1TUkYR7ewSUjU0Bcc:Test:Dinner
 Scarpetta:ChIJ6_nZ9KhTUkYRjRni1JIkKBo:Test:Dinner
 Italy:ChIJPaSvyRxSUkYRBqZgtoOxlfA:Test:Dinner
+Restaurant Kanalen:ChIJL8NdbTxTUkYR-bra61KbZcc:Test:Dinner
+Tonys:ChIJmQCT4zxTUkYRJCtyzlPsea8:Test:Dinner
+Granola:ChIJD8FxG6BTUkYRMtZaGD-1CBU:Test:Brunch
+Dyrehaven:ChIJKU6SQHZTUkYRSDo3XOH0Gls:Test:Lunch
+MeyersDeli:ChIJ30N2vaFTUkYRgr7D3MeRNEM:Test:Lunch
+Lele:ChIJjfGGq_xSUkYRJgt9WlV9A9s:Test:Lunch
+Letz:ChIJnV8hIftSUkYRQa4nBtrpzB8:Test:TakeAway
+Amass:ChIJ64fS7NdSUkYRBA5G4ZV5ELE:Test:Dinner
+WeDO:ChIJKynCvvRSUkYRftMuO5cbzTw:Test:TakeAway
+Cavallino:ChIJzYAsMvxSUkYRxTe0Le-Upns:Test:TakeAway
+

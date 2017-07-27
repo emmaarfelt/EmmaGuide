@@ -51,16 +51,17 @@ class RestaurantCatalog {
             //Remove country from address
             let formatAddr = apiRest.formatted_address.components(separatedBy: ", Danmark")[0]
             
-            let rest = Restaurants(name: apiRest.name,
+            let entity = Restaurants(name: apiRest.name,
                                     formatted_address: formatAddr,
                                     website: apiRest.website,
                                     location: ((apiRest.geometry.location.lat,apiRest.geometry.location.lng)),
                                     opening_hours: apiRest.opening_hours.weekday_text,
-                                    photo: apiPhoto)
-            categoryRestaurants.append(rest!)
+                                    photo: apiPhoto,
+                                    comment: rest.desc)
+            categoryRestaurants.append(entity!)
         }
         
-        return categoryRestaurants
+        return categoryRestaurants.shuffled()
     }
     
 }

@@ -134,10 +134,10 @@
 		B58F493E1F14176600CC8D2F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B58F493C1F14142500CC8D2F /* EntityCategory.swift */,
 				B54306B01F1D47A600A143E8 /* Restaurants.swift */,
 				B53540391F28A63400D59944 /* RestaurantCatalog.swift */,
 				B5DE8D111F226FA5005503E0 /* APICaller.swift */,
+				B58F493C1F14142500CC8D2F /* EntityCategory.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
