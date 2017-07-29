@@ -46,11 +46,11 @@ class EntityCategory {
         
         //Setup Entities
         let dinnerEntites = RestaurantCatalog().getRestaurants(category: "Dinner")
+        let spaEntities = RestaurantCatalog().getRestaurants(category: "Spa")
         let lunchEntites = RestaurantCatalog().getRestaurants(category: "Lunch")
         let brunchEntites = RestaurantCatalog().getRestaurants(category: "Brunch")
         let cocktailsEntites = RestaurantCatalog().getRestaurants(category: "Cocktails")
         let takeawayEntities = RestaurantCatalog().getRestaurants(category: "TakeAway")
-        let spaEntities = RestaurantCatalog().getRestaurants(category: "Spa")
         let coffeeEntities = RestaurantCatalog().getRestaurants(category: "Coffee")
         let workEntities = RestaurantCatalog().getRestaurants(category: "Workstation")
         

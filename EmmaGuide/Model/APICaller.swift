@@ -8,7 +8,11 @@
 
 import Foundation
 
+let IMAGE_CACHE = NSCache<AnyObject, UIImage>()
+let TEXT_CACHE = NSCache<AnyObject, AnyObject>()
+
 class APICaller {
+    
     struct Result : Codable {
         var result : Restaurant
     }
@@ -40,50 +44,59 @@ class APICaller {
     }
 
     func fetchRestaurantDetails(placeId: String) -> Restaurant? {
-        let jsonURLString = "https://maps.googleapis.com/maps/api/place/details/json?placeid=\(placeId)&key=KEY&language=da"
-        guard let url = URL(string: jsonURLString) else { return nil}
         
-        // set up the session
-        let config = URLSessionConfiguration.default
-        let session = URLSession(configuration: config)
-        
-        let (data, _, error) = session.synchronousDataTask(with: url)
-        
-        guard error == nil else {
-            print("error calling GET")
-            print(error!)
-            return nil
+        if let place = TEXT_CACHE.object(forKey: placeId as AnyObject) {
+            return place as? APICaller.Restaurant
+        } else {
+            let jsonURLString = "https://maps.googleapis.com/maps/api/place/details/json?placeid=\(placeId)&key=KEY&language=da"
+            guard let url = URL(string: jsonURLString) else { return nil}
+            
+            // set up the session
+            let config = URLSessionConfiguration.default
+            let session = URLSession(configuration: config)
+            
+            let (data, _, error) = session.synchronousDataTask(with: url)
+            
+            guard error == nil else {
+                print("error calling GET")
+                print(error!)
+                return nil
+            }
+            // make sure we got data
+            guard let responseData = data else {
+                print("Error: did not receive data")
+                return nil
+            }
+            // parse the result as JSON, since that's what the API provides
+            do {
+                let place = try JSONDecoder().decode(Result.self, from: responseData)
+                TEXT_CACHE.setObject(place.result as AnyObject, forKey: placeId as AnyObject)
+                return place.result
+            } catch  {
+                print("error trying to convert data to JSON")
+                return nil
+            }
         }
-        // make sure we got data
-        guard let responseData = data else {
-            print("Error: did not receive data")
-            return nil
-        }
-        // parse the result as JSON, since that's what the API provides
-        do {
-            let place = try JSONDecoder().decode(Result.self, from: responseData)
-            return place.result
-        } catch  {
-            print("error trying to convert data to JSON")
-            return nil
-        }
-        
     }
     
-    func fetchRestaurantPhoto(photos: [Photo]) -> UIImage? {
-        let photoRef = photos[0].photo_reference
-        let jsonURLString = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photoreference=\(photoRef)&key=KEY"
-        guard let url = URL(string: jsonURLString) else {return nil  }
-        
-        // set up the session
-        let config = URLSessionConfiguration.default
-        let session = URLSession(configuration: config)
-        
-        let (data, _, _) = session.synchronousDataTask(with: url)
-        if let image = UIImage(data:data!) {
-            return image
+    func fetchRestaurantPhoto(photoRef: String) -> UIImage? {
+        if let photo = IMAGE_CACHE.object(forKey: photoRef as AnyObject) {
+            return photo
         } else {
-            return nil
+            let jsonURLString = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=600&photoreference=\(photoRef)&key=KEY"
+            guard let url = URL(string: jsonURLString) else {return nil  }
+            
+            // set up the session
+            let config = URLSessionConfiguration.default
+            let session = URLSession(configuration: config)
+            
+            let (data, _, _) = session.synchronousDataTask(with: url)
+            if let image = UIImage(data:data!) {
+                IMAGE_CACHE.setObject(image, forKey: photoRef as AnyObject)
+                return image
+            } else {
+                return nil
+            }
         }
         
     }

@@ -30,7 +30,7 @@ class RestaurantViewController: UIViewController, UIScrollViewDelegate {
     @IBAction func back(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
-    
+
     
     //Round bottons
     @IBOutlet var mapLocation: UIButton!
@@ -52,21 +52,25 @@ class RestaurantViewController: UIViewController, UIScrollViewDelegate {
         Location.text = restaurant.formatted_address
         setupLocationValues()
         restDesc.text = restaurant.comment
-        restDesc.numberOfLines = 0
-        restDesc.sizeToFit()
     }
     
     override func viewDidAppear(_ animaed: Bool) {
+        var photo : UIImage
+        if let pho = IMAGE_CACHE.object(forKey: restaurant.photoRef as AnyObject) {
+            photo = pho
+        } else {
+            photo = APICaller().fetchRestaurantPhoto(photoRef: restaurant.photoRef)!
+        }
         
         // Header - Image
         headerImageView = UIImageView(frame: header.bounds)
-        headerImageView?.image = restaurant.photo
+        headerImageView?.image = photo
         headerImageView?.contentMode = UIViewContentMode.scaleAspectFill
         header.insertSubview(headerImageView, belowSubview: headerLabel)
         
         // Header - Blurred Image
         headerBlurImageView = UIImageView(frame: header.bounds)
-        headerBlurImageView?.image = restaurant.photo.blurredImage(withRadius: 10, iterations: 20, tintColor: UIColor.clear)
+        headerBlurImageView?.image = photo.blurredImage(withRadius: 10, iterations: 20, tintColor: UIColor.clear)
         headerBlurImageView?.contentMode = UIViewContentMode.scaleAspectFill
         headerBlurImageView?.alpha = 0.0
         header.insertSubview(headerBlurImageView, belowSubview: headerLabel)
@@ -81,7 +85,6 @@ class RestaurantViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         let offset = scrollView.contentOffset.y
-        var avatarTransform = CATransform3DIdentity
         var headerTransform = CATransform3DIdentity
         
         // PULL DOWN
@@ -122,18 +125,17 @@ class RestaurantViewController: UIViewController, UIScrollViewDelegate {
         
         // Apply Transformations
         header.layer.transform = headerTransform
-        infoButtons.layer.transform = avatarTransform
     }
     
     @IBAction func Book(_ sender: UIButton) {
-        UIApplication.shared.openURL(URL(string: self.restaurant.website)!)
+        UIApplication.shared.openURL(URL(string: self.restaurant.website!)!)
     }
     
     @IBAction func seeOpeningHours(_ sender: UIButton) {
         //Setup View
         let openingHoursPopUp = OpeningHoursView(frame: CGRect(x: 0, y: 0, width: 0, height: (self.view.frame.height / 2)))
         openingHoursPopUp.center = CGPoint(x: self.view.frame.size.width  / 2, y: (self.view.frame.size.height / 2) - 50)
-        openingHoursPopUp.openingHours.numberOfLines = restaurant.opening_hours.count + 1
+        openingHoursPopUp.openingHours.numberOfLines = restaurant.opening_hours!.count + 1
         
         openingHoursPopUp.layer.shadowRadius = 3;
         openingHoursPopUp.layer.shadowOpacity = 0.2;
@@ -141,7 +143,7 @@ class RestaurantViewController: UIViewController, UIScrollViewDelegate {
         openingHoursPopUp.layer.shadowColor = UIColor.black.cgColor
         
         //Setup Text
-        openingHoursPopUp.openingHours.text = getOpeningHours(hours: restaurant.opening_hours)
+        openingHoursPopUp.openingHours.text = getOpeningHours(hours: restaurant.opening_hours!)
         openingHoursPopUp.openingHours.sizeToFit()
         
         //Adjust width of frame

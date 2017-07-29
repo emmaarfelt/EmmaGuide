@@ -108,7 +108,6 @@ class DraggableView: UIView {
             UIView.animate(withDuration: 0.3, animations: {() -> Void in
                 self.center = self.originPoint
                 self.transform = CGAffineTransform(rotationAngle: 0)
-                //self.overlayView.alpha = 0
             })
         }
     }
@@ -121,6 +120,8 @@ class DraggableView: UIView {
             }, completion: {
                 (value: Bool) in
                 self.removeFromSuperview()
+                self.center = self.originPoint
+                self.transform = CGAffineTransform(rotationAngle: 0)
         })
         delegate.cardSwiped(self)
     }
@@ -133,6 +134,8 @@ class DraggableView: UIView {
             }, completion: {
                 (value: Bool) in
                 self.removeFromSuperview()
+                self.center = self.originPoint
+                self.transform = CGAffineTransform(rotationAngle: 0)
         })
         delegate.cardSwiped(self)
     }

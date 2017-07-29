@@ -79,11 +79,11 @@ class LocationController : UIViewController, CLLocationManagerDelegate {
     
     
     func getRestaurantCoordinates(rest: Restaurants) -> CLLocation {
-        return CLLocation(latitude: CLLocationDegrees(rest.location.0), longitude: CLLocationDegrees(rest.location.1))
+        return CLLocation(latitude: CLLocationDegrees(rest.location!.0), longitude: CLLocationDegrees(rest.location!.1))
     }
     
     func getRestaurantCoordinates2D(rest: Restaurants) -> CLLocationCoordinate2D {
-        return CLLocationCoordinate2DMake(CLLocationDegrees(rest.location.0), CLLocationDegrees(rest.location.1))
+        return CLLocationCoordinate2DMake(CLLocationDegrees(rest.location!.0), CLLocationDegrees(rest.location!.1))
     }
     
     func calculateDistance(currentCoordinate: CLLocation, restCoordinate: CLLocation) -> CLLocationDistance {

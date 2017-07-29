@@ -46,17 +46,16 @@ class RestaurantCatalog {
        
         for rest in filteredRest {
             guard let apiRest = APICaller().fetchRestaurantDetails(placeId: rest.placeID) else {return nil}
-            guard let apiPhoto = APICaller().fetchRestaurantPhoto(photos: (apiRest.photos)) else {return nil}
             
             //Remove country from address
             let formatAddr = apiRest.formatted_address.components(separatedBy: ", Danmark")[0]
-            
             let entity = Restaurants(name: apiRest.name,
                                     formatted_address: formatAddr,
                                     website: apiRest.website,
                                     location: ((apiRest.geometry.location.lat,apiRest.geometry.location.lng)),
                                     opening_hours: apiRest.opening_hours.weekday_text,
-                                    photo: apiPhoto,
+                                    photoRef: apiRest.photos[0].photo_reference,
+                                    //photo: apiPhoto,
                                     comment: rest.desc)
             categoryRestaurants.append(entity!)
         }
