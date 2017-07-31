@@ -9,7 +9,7 @@
 import UIKit
 
 
-class Restaurants {
+class Entity {
     
     //MARK: Properties
     
