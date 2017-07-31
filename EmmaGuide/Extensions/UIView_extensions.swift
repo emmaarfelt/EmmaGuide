@@ -44,12 +44,10 @@ extension Sequence {
 }
 
 extension UILabel {
-    func addTextSpacing(spacing: Float) {
-        if let textString = text {
-            let attributedString = NSMutableAttributedString(string: textString)
-            attributedString.addAttribute(NSAttributedStringKey.kern, value: spacing, range: NSRange(location: 0, length: attributedString.length - 1))
-            attributedText = attributedString
-        }
+    func addTextSpacing(spacing: CGFloat) {
+        let attributedString = NSMutableAttributedString(string: self.text!)
+        attributedString.addAttribute(NSAttributedStringKey.kern, value: spacing, range: NSRange(location: 0, length: self.text!.characters.count))
+        self.attributedText = attributedString
     }
     
     func addLineSpacing(spacing: Float) {

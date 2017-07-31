@@ -18,12 +18,13 @@ class Entity {
     var website: String
     var location : (Float,Float)
     var opening_hours: [String]
-    var photoRef: String
+    var photoRef: String?
     var comment: String
+    var category: String
     
     //MARK: Initialization
     
-    init?(name: String, formatted_address: String, website: String, location: (Float, Float), opening_hours: [String], photoRef: String, comment: String) {
+    init?(name: String, formatted_address: String, website: String, location: (Float, Float), opening_hours: [String]?, photoRef: String?, comment: String, category: String) {
         
         // The name must not be empty
         guard !name.isEmpty else {
@@ -35,9 +36,10 @@ class Entity {
         self.formatted_address = formatted_address
         self.website = website
         self.location = location
-        self.opening_hours = opening_hours
-        self.photoRef = photoRef
+        self.opening_hours = opening_hours ?? ["ikke tilgængelige"]
+        self.photoRef = photoRef ?? ""
         self.comment = comment
+        self.category = category
     }
     
 }

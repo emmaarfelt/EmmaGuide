@@ -13,7 +13,7 @@ let offset_B_LabelHeader:CGFloat = 308.0 // At this offset the Black label reach
 let distance_W_LabelHeader:CGFloat = 35.0 // The distance between the bottom of the White Label and its position in the final header size (header height - HeaderStop).
 
 class RestaurantViewController: UIViewController, UIScrollViewDelegate {
-    var restaurant:Restaurants!
+    var restaurant:Entity!
     
     @IBOutlet var scrollView:UIScrollView!
     @IBOutlet weak var blackLabel: UILabel!
@@ -59,7 +59,7 @@ class RestaurantViewController: UIViewController, UIScrollViewDelegate {
         if let pho = IMAGE_CACHE.object(forKey: restaurant.photoRef as AnyObject) {
             photo = pho
         } else {
-            photo = APICaller().fetchRestaurantPhoto(photoRef: restaurant.photoRef)!
+            photo = APICaller().fetchRestaurantPhoto(photoRef: restaurant.photoRef!)!
         }
         
         // Header - Image
@@ -128,14 +128,14 @@ class RestaurantViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @IBAction func Book(_ sender: UIButton) {
-        UIApplication.shared.openURL(URL(string: self.restaurant.website!)!)
+        UIApplication.shared.openURL(URL(string: self.restaurant.website)!)
     }
     
     @IBAction func seeOpeningHours(_ sender: UIButton) {
         //Setup View
         let openingHoursPopUp = OpeningHoursView(frame: CGRect(x: 0, y: 0, width: 0, height: (self.view.frame.height / 2)))
         openingHoursPopUp.center = CGPoint(x: self.view.frame.size.width  / 2, y: (self.view.frame.size.height / 2) - 50)
-        openingHoursPopUp.openingHours.numberOfLines = restaurant.opening_hours!.count + 1
+        openingHoursPopUp.openingHours.numberOfLines = restaurant.opening_hours.count + 1
         
         openingHoursPopUp.layer.shadowRadius = 3;
         openingHoursPopUp.layer.shadowOpacity = 0.2;
@@ -143,7 +143,7 @@ class RestaurantViewController: UIViewController, UIScrollViewDelegate {
         openingHoursPopUp.layer.shadowColor = UIColor.black.cgColor
         
         //Setup Text
-        openingHoursPopUp.openingHours.text = getOpeningHours(hours: restaurant.opening_hours!)
+        openingHoursPopUp.openingHours.text = getOpeningHours(hours: restaurant.opening_hours)
         openingHoursPopUp.openingHours.sizeToFit()
         
         //Adjust width of frame
@@ -175,7 +175,6 @@ class RestaurantViewController: UIViewController, UIScrollViewDelegate {
     func setupLocationValues() {
         self.Pin.frame = CGRect(x: (locationView.frame.size.width - Pin.frame.size.width - Location.intrinsicContentSize.width) / 2, y: Pin.frame.origin.y, width: Pin.frame.size.width, height: Pin.frame.size.height)
         self.Location.frame = CGRect(x: Pin.frame.origin.x + Pin.frame.size.width + 4, y: Location.frame.origin.y, width: Location.intrinsicContentSize.width, height: Location.frame.size.height)
-        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{

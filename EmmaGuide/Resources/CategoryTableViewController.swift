@@ -11,13 +11,13 @@ import UIKit
 class CategoryTableViewController: UITableViewController {
 
     //MARK: Properties
-    var categories = EntityCategory.generateCategories()
     var gradient = CAGradientLayer()
+    var categories = [EntityCategory]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Load the sample data.
-        LocationController().setupLocationManager()
+        categories = EntityCategory.generateCategories()
     }
     
     override func didReceiveMemoryWarning() {

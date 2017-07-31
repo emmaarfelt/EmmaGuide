@@ -35,7 +35,7 @@ class DraggableView: UIView {
     var desc: UILabel!
     var distance: UILabel!
     
-    var rest: Restaurants! 
+    var rest: Entity! 
     
 
     required init?(coder aDecoder: NSCoder) {
@@ -51,7 +51,7 @@ class DraggableView: UIView {
         cardview.bindFrameToSuperviewBounds()
         
         
-        name = cardview.lblTitle
+        name = cardview.name
         img = cardview.image
         desc = cardview.desc
         distance = cardview.distance

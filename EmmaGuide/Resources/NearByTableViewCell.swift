@@ -10,6 +10,10 @@ import UIKit
 
 class NearByTableViewCell: UITableViewCell {
 
+    @IBOutlet var arrow: UIImageView!
+    @IBOutlet var entityName: UILabel!
+    var entity: Entity!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

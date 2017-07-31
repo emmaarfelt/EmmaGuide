@@ -10,10 +10,12 @@
 		B5007E4F1F28B68500401571 /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5007E4E1F28B68500401571 /* LocationController.swift */; };
 		B5007E511F28DE5000401571 /* Children of the Starlight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B5007E501F28DA8F00401571 /* Children of the Starlight.ttf */; };
 		B52A14BA1F23658200B36232 /* restaurantIDs.txt in Resources */ = {isa = PBXBuildFile; fileRef = B52A14B91F23658200B36232 /* restaurantIDs.txt */; };
-		B535403A1F28A63400D59944 /* RestaurantCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53540391F28A63400D59944 /* RestaurantCatalog.swift */; };
+		B535403A1F28A63400D59944 /* EntitiesCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53540391F28A63400D59944 /* EntitiesCatalog.swift */; };
 		B54306AE1F1D3A6B00A143E8 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54306AB1F1D3A6B00A143E8 /* CardView.swift */; };
 		B54306AF1F1D3A6B00A143E8 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54306AC1F1D3A6B00A143E8 /* CardView.xib */; };
-		B54306B11F1D47A600A143E8 /* Restaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54306B01F1D47A600A143E8 /* Restaurants.swift */; };
+		B54306B11F1D47A600A143E8 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54306B01F1D47A600A143E8 /* Entity.swift */; };
+		B54B442A1F2DBF6900A26DAE /* NearbyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B44291F2DBF6900A26DAE /* NearbyTableViewController.swift */; };
+		B54B442C1F2DBFA700A26DAE /* NearByTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54B442B1F2DBFA700A26DAE /* NearByTableViewCell.swift */; };
 		B56B2A761F1A8A1C00670B68 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56B2A751F1A8A1C00670B68 /* SwipeViewController.swift */; };
 		B56B2A781F1A8A3800670B68 /* DraggableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56B2A771F1A8A3800670B68 /* DraggableView.swift */; };
 		B58CC7151F27A2D1003B6BA2 /* OpeningHoursView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B58CC7141F27A2D1003B6BA2 /* OpeningHoursView.xib */; };
@@ -38,10 +40,12 @@
 		B5007E4E1F28B68500401571 /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationController.swift; path = Resources/LocationController.swift; sourceTree = "<group>"; };
 		B5007E501F28DA8F00401571 /* Children of the Starlight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Children of the Starlight.ttf"; path = "Images.xcassets/Children of the Starlight.dataset/Children of the Starlight.ttf"; sourceTree = "<group>"; };
 		B52A14B91F23658200B36232 /* restaurantIDs.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = restaurantIDs.txt; path = Model/restaurantIDs.txt; sourceTree = "<group>"; };
-		B53540391F28A63400D59944 /* RestaurantCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RestaurantCatalog.swift; path = Model/RestaurantCatalog.swift; sourceTree = "<group>"; };
+		B53540391F28A63400D59944 /* EntitiesCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EntitiesCatalog.swift; path = Model/EntitiesCatalog.swift; sourceTree = "<group>"; };
 		B54306AB1F1D3A6B00A143E8 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardView.swift; path = EmmaGuide/Resources/CardView.swift; sourceTree = "<group>"; };
 		B54306AC1F1D3A6B00A143E8 /* CardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CardView.xib; path = EmmaGuide/Resources/CardView.xib; sourceTree = "<group>"; };
-		B54306B01F1D47A600A143E8 /* Restaurants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Restaurants.swift; path = Model/Restaurants.swift; sourceTree = "<group>"; };
+		B54306B01F1D47A600A143E8 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Entity.swift; path = Model/Entity.swift; sourceTree = "<group>"; };
+		B54B44291F2DBF6900A26DAE /* NearbyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyTableViewController.swift; sourceTree = "<group>"; };
+		B54B442B1F2DBFA700A26DAE /* NearByTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NearByTableViewCell.swift; path = EmmaGuide/Resources/NearByTableViewCell.swift; sourceTree = "<group>"; };
 		B56B2A751F1A8A1C00670B68 /* SwipeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwipeViewController.swift; path = Resources/SwipeViewController.swift; sourceTree = "<group>"; };
 		B56B2A771F1A8A3800670B68 /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DraggableView.swift; path = Resources/DraggableView.swift; sourceTree = "<group>"; };
 		B58CC7141F27A2D1003B6BA2 /* OpeningHoursView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = OpeningHoursView.xib; path = EmmaGuide/Resources/OpeningHoursView.xib; sourceTree = "<group>"; };
@@ -127,6 +131,7 @@
 				B5007E4E1F28B68500401571 /* LocationController.swift */,
 				B58F493A1F1412B800CC8D2F /* CategoryTableViewController.swift */,
 				B59DBC9D1F210E5A004778D6 /* RestaurantViewController.swift */,
+				B54B44291F2DBF6900A26DAE /* NearbyTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -134,10 +139,10 @@
 		B58F493E1F14176600CC8D2F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B54306B01F1D47A600A143E8 /* Restaurants.swift */,
-				B53540391F28A63400D59944 /* RestaurantCatalog.swift */,
+				B54306B01F1D47A600A143E8 /* Entity.swift */,
 				B5DE8D111F226FA5005503E0 /* APICaller.swift */,
 				B58F493C1F14142500CC8D2F /* EntityCategory.swift */,
+				B53540391F28A63400D59944 /* EntitiesCatalog.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 			children = (
 				B58F49481F1427D000CC8D2F /* Gradient.swift */,
 				B58F49381F140FE100CC8D2F /* CategoryTableViewCell.swift */,
+				B54B442B1F2DBFA700A26DAE /* NearByTableViewCell.swift */,
 				B54306AB1F1D3A6B00A143E8 /* CardView.swift */,
 				B54306AC1F1D3A6B00A143E8 /* CardView.xib */,
 				B58CC7161F27A36A003B6BA2 /* OpeningHoursView.swift */,
@@ -256,13 +262,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B54B442A1F2DBF6900A26DAE /* NearbyTableViewController.swift in Sources */,
 				B58F49161F13D6E000CC8D2F /* AppDelegate.swift in Sources */,
 				B59DBC9E1F210E5A004778D6 /* RestaurantViewController.swift in Sources */,
 				B58CC7171F27A36A003B6BA2 /* OpeningHoursView.swift in Sources */,
+				B54B442C1F2DBFA700A26DAE /* NearByTableViewCell.swift in Sources */,
 				B56B2A761F1A8A1C00670B68 /* SwipeViewController.swift in Sources */,
 				B56B2A781F1A8A3800670B68 /* DraggableView.swift in Sources */,
 				B54306AE1F1D3A6B00A143E8 /* CardView.swift in Sources */,
-				B535403A1F28A63400D59944 /* RestaurantCatalog.swift in Sources */,
+				B535403A1F28A63400D59944 /* EntitiesCatalog.swift in Sources */,
 				B59539641F280AF30031739D /* UIView_extensions.swift in Sources */,
 				B59DBCA71F211BB3004778D6 /* FXBlurView.m in Sources */,
 				B58F49391F140FE100CC8D2F /* CategoryTableViewCell.swift in Sources */,
@@ -270,7 +278,7 @@
 				B58F493B1F1412B800CC8D2F /* CategoryTableViewController.swift in Sources */,
 				B58F493D1F14142500CC8D2F /* EntityCategory.swift in Sources */,
 				B59539661F280B290031739D /* URLSession_extensions.swift in Sources */,
-				B54306B11F1D47A600A143E8 /* Restaurants.swift in Sources */,
+				B54306B11F1D47A600A143E8 /* Entity.swift in Sources */,
 				B58F49491F1427D000CC8D2F /* Gradient.swift in Sources */,
 				B5007E4F1F28B68500401571 /* LocationController.swift in Sources */,
 				B59539611F2809240031739D /* Double_Extensions.swift in Sources */,

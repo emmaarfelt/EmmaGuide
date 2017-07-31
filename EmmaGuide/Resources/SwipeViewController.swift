@@ -8,23 +8,24 @@
 
 import UIKit
 
-let MAX_BUFFER_SIZE = 1
+let MAX_BUFFER_SIZE = 2
 let CARD_CACHE = NSCache<AnyObject, AnyObject>()
 
 class SwipeViewController: UIViewController, DraggableViewDelegate {
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var catName: UILabel!
     @IBAction func back(_ sender: UIButton) {
+        print("back")
         self.navigationController?.popViewController(animated: true)
     }
     
     var cardNumber : Int = 0
     var loadedCards: [DraggableView]!
-    
     var viewCategory: EntityCategory!
-    var restaurants : [Restaurants]!
-    var CARD_HEIGHT : CGFloat!
-    var CARD_WIDTH: CGFloat!
+    var restaurants = [Entity]()
+    
+    var cardHeight : CGFloat!
+    var cardWidth: CGFloat!
     
     required init?(coder aDecoder: NSCoder)
     {
@@ -34,27 +35,25 @@ class SwipeViewController: UIViewController, DraggableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //Setup view to align with Category
         self.view.backgroundColor = viewCategory.color!.withAlphaComponent(1.0)
         catName.text = viewCategory.name
-        restaurants = viewCategory.entities
         
-        // Setup cards
-        //allCards = []
+        restaurants = getCategoryEntities(category: viewCategory.name!)
+        //Setup Cards
         loadedCards = []
-        
-        
-        CARD_HEIGHT  = ((backgroundView.frame.height / 2) + (catName.frame.height * 1.7))
-        CARD_WIDTH = (backgroundView.frame.width - (catName.frame.width / 4))
-        
+        cardHeight  = ((backgroundView.frame.height / 2) + (catName.frame.height * 1.7))
+        cardWidth = (backgroundView.frame.width - (catName.frame.width / 4))
         loadCards()
     }
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func getCategoryEntities(category: String) -> [Entity] {
+        return EntitiesCatalog().getRestaurants(category: category)!
     }
     
     func createDraggableViewWithDataAtIndex(_ index: NSInteger) -> DraggableView {
@@ -64,15 +63,11 @@ class SwipeViewController: UIViewController, DraggableViewDelegate {
         //Check if card already exists
         if let card = CARD_CACHE.object(forKey: key as AnyObject) {
             let card = card as! DraggableView
-            //We need to recalculate the distance if the user has moved
-            let distance = LocationController().getDistanceToRestaurant(rest: card.rest)
-            card.distance.text = "\(distance) kilometer"
-
             card.delegate = self
             return card
         } else {
             //If the card does not exist in cache we create the view
-            let draggableView = DraggableView(frame: CGRect(x: (backgroundView.frame.size.width - CARD_WIDTH)/2, y: (backgroundView.frame.size.height - CARD_HEIGHT)/2, width: CARD_WIDTH, height: CARD_HEIGHT))
+            let draggableView = DraggableView(frame: CGRect(x: (backgroundView.frame.size.width - cardWidth)/2, y: (backgroundView.frame.size.height - cardHeight)/2, width: cardWidth, height: cardHeight))
             
             //Setup View
             draggableView.layer.shadowRadius = 5;
@@ -82,22 +77,28 @@ class SwipeViewController: UIViewController, DraggableViewDelegate {
             
             //Setup Data
             draggableView.rest = restaurants[index]
-            draggableView.name.text = restaurants[index].name?.uppercased()
+            draggableView.name.text = restaurants[index].name.uppercased()
             draggableView.name.addTextSpacing(spacing: 3.0)
             draggableView.name.adjustsFontSizeToFitWidth = true
             draggableView.desc.text = restaurants[index].comment
             draggableView.desc.addLineSpacing(spacing: 1.5)
-            draggableView.desc.numberOfLines = 0
-            draggableView.sizeToFit()
+
             
             //Setup Image
             let photoReference = restaurants[index].photoRef
-            draggableView.img.image = APICaller().fetchRestaurantPhoto(photoRef: photoReference)
+            if photoReference == "" {draggableView.img.image = #imageLiteral(resourceName: "copenhagen-default")} else {
+                draggableView.img.image = APICaller().fetchRestaurantPhoto(photoRef: photoReference!)
+            }
             
         
             //Calculate the distance to the Restaurant
-            let distance = LocationController().getDistanceToRestaurant(rest: draggableView.rest)
-            draggableView.distance.text = "\(distance) kilometer"
+            var distance : Float
+            if let dist = LocationController().getDistanceToRestaurant(rest: draggableView.rest) {
+                distance = Float(dist)
+                draggableView.distance.text = "\(distance) kilometer"
+            } else {
+                draggableView.distance.text = "Kunne ikke beregne distance"
+            }
             
             draggableView.delegate = self
             
@@ -121,10 +122,14 @@ class SwipeViewController: UIViewController, DraggableViewDelegate {
                 cardNumber += 1
             }
         } else {
-            let newCard: DraggableView = self.createDraggableViewWithDataAtIndex(cardNumber)
-            loadedCards.append(newCard)
-            backgroundView.insertSubview(loadedCards[cardNumber], belowSubview: loadedCards[cardNumber - 1])
-            cardNumber += 1
+            DispatchQueue.global(qos: .userInitiated).async {
+                let newCard: DraggableView = self.createDraggableViewWithDataAtIndex(self.cardNumber)
+                self.loadedCards.append(newCard)
+                DispatchQueue.main.async {
+                    self.backgroundView.insertSubview(self.loadedCards[self.cardNumber], belowSubview: self.loadedCards[self.cardNumber - 1])
+                    self.cardNumber += 1
+                }
+            }
         }
     }
     

@@ -13,20 +13,20 @@ import UIKit
 {
     var view:UIView!;
     
-    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var name: UILabel!
     @IBOutlet weak var distance: UILabel!
-    @IBOutlet weak var desc: UILabel!
+    @IBOutlet var desc: UILabel!
     @IBOutlet weak var image: UIImageView!
     
     
-   @IBInspectable var lblTitleText : String?
+   @IBInspectable var nameText : String?
         {
         get{
-            return lblTitle.text;
+            return name.text;
         }
         set(lblTitleText)
         {
-            lblTitle.text = lblTitleText!;
+            name.text = nameText!;
         }
     }
 
@@ -50,10 +50,6 @@ import UIKit
         self.addSubview(view)
         view.layer.cornerRadius = 5;
         view.layer.masksToBounds = true;
-        desc.adjustsFontSizeToFitWidth = true
-
     }
-
-
     
 }

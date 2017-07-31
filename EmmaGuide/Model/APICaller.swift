@@ -22,8 +22,8 @@ class APICaller {
         var formatted_address: String
         var website: String
         var geometry : Geometry
-        var opening_hours: OpeningHours
-        var photos: [Photo]
+        var opening_hours: OpeningHours?
+        var photos: [Photo]?
     }
     
     struct Geometry : Codable {
@@ -36,11 +36,11 @@ class APICaller {
     }
 
     struct OpeningHours : Codable {
-      var weekday_text: [String]
+      var weekday_text: [String]?
     }
     
     struct Photo : Codable {
-        var photo_reference: String
+        var photo_reference: String?
     }
 
     func fetchRestaurantDetails(placeId: String) -> Restaurant? {
@@ -69,11 +69,12 @@ class APICaller {
             }
             // parse the result as JSON, since that's what the API provides
             do {
-                let place = try JSONDecoder().decode(Result.self, from: responseData)
+                var place = try JSONDecoder().decode(Result.self, from: responseData)
+                place.result.formatted_address = place.result.formatted_address.components(separatedBy: ", Danmark")[0]
                 TEXT_CACHE.setObject(place.result as AnyObject, forKey: placeId as AnyObject)
                 return place.result
             } catch  {
-                print("error trying to convert data to JSON")
+                print("error trying to convert data to JSON\(placeId)")
                 return nil
             }
         }
