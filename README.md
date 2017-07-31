@@ -7,7 +7,6 @@ My first ever iOS and Swift project. The app is a city guide to Copenhagen inclu
 ![](https://lh3.googleusercontent.com/sEuc47RZ_kU7lbMAil_OzK66Y09s0ssrj5BCcnw6ucz_UqfKDb0Or1UBRLs-crfcdvwNu50SfiMGo6s=w1642-h962)
 ![](https://lh6.googleusercontent.com/Cgd8FdnSzYF8wyBrQaoZ0FXzOw7wHOYJPBykGGJnhrFJWZ3HMNhVXUeNkPkztGqOQa-HzpyJ0LEuQiM=w1642-h962)
 ![](https://lh3.googleusercontent.com/vMqwfTsN-_W-ZB2YWdgQlp2tae5xNsGbpIwwReEp78UZCDdYcTUuJZ72DTqnTa60voQbz66UOlJajzk=w1642-h962)
-![](https://lh3.googleusercontent.com/2anC4ERo3mRwQmqv_25ViFcf50SpFc9OiX_Ih0N-ZzYo7jeaw5aqJJWcA-BIEuLmNq3DZzcmbYl54h8=w1642-h962)
 
 ### Prerequisites
 You need to have a API Key for Google Places, which can be obtained through here: https://developers.google.com/places/
