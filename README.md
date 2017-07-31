@@ -3,10 +3,10 @@
 My first ever iOS and Swift project. The app is a city guide to Copenhagen including my favorite spots. It can be customized, so you can make your own city guide app!
 
 ## Screenshots
-![alt text](https://lh3.googleusercontent.com/fE0gwZJxqyg4h5olS3nFTQ4MZJ9srbLjQsTL01GokU5zQ_-c2-qCO4xkjGG4H4tqn7SHCROjA1anD7w=w1642-h962)
-![alt text](https://lh3.googleusercontent.com/sEuc47RZ_kU7lbMAil_OzK66Y09s0ssrj5BCcnw6ucz_UqfKDb0Or1UBRLs-crfcdvwNu50SfiMGo6s=w1642-h962)
-![alt text](https://lh6.googleusercontent.com/Cgd8FdnSzYF8wyBrQaoZ0FXzOw7wHOYJPBykGGJnhrFJWZ3HMNhVXUeNkPkztGqOQa-HzpyJ0LEuQiM=w1642-h962)
-![alt text](https://lh3.googleusercontent.com/vMqwfTsN-_W-ZB2YWdgQlp2tae5xNsGbpIwwReEp78UZCDdYcTUuJZ72DTqnTa60voQbz66UOlJajzk=w1642-h962)
+![alt text](http://amagerhalshug.dk/wp-content/uploads/EmmaGuide3.png)
+![alt text](http://amagerhalshug.dk/wp-content/uploads/EmmaGuide2.png)
+![alt text](http://amagerhalshug.dk/wp-content/uploads/EmmaGuide1.png)
+![alt text](http://amagerhalshug.dk/wp-content/uploads/EmmaGuide4.png)
 
 ### Prerequisites
 You need to have a API Key for Google Places, which can be obtained through here: https://developers.google.com/places/
