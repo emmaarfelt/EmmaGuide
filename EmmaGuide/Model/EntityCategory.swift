@@ -40,64 +40,37 @@ class EntityCategory {
         let coffeePhoto = UIImage(named: "coffee")
         let workPhoto = UIImage(named: "workstation")
         
-        
-        /*DispatchQueue.global(qos: .userInitiated).async {
-            // Do some time consuming task in this background thread
-            // Mobile app will remain to be responsive to user actions
-            let dinnerEntities = EntitiesCatalog().getRestaurants(category: "Dinner")
-            
-            let brunchEntites = EntitiesCatalog().getRestaurants(category: "Brunch")
-            ENTITY_CATEGORIES[1].entities = brunchEntites
-            
-            let lunchEntites = EntitiesCatalog().getRestaurants(category: "Lunch")
-            ENTITY_CATEGORIES[2].entities = lunchEntites
-            
-            let cocktailsEntites = EntitiesCatalog().getRestaurants(category: "Cocktails")
-            ENTITY_CATEGORIES[6].entities = cocktailsEntites
-            
-            let takeawayEntities = EntitiesCatalog().getRestaurants(category: "TakeAway")
-            ENTITY_CATEGORIES[3].entities = takeawayEntities
-            
-            let coffeeEntities = EntitiesCatalog().getRestaurants(category: "Coffee")
-            ENTITY_CATEGORIES[4].entities = coffeeEntities
-            
-            let workEntities = EntitiesCatalog().getRestaurants(category: "Workstation")
-            ENTITY_CATEGORIES[5].entities = workEntities
-            
-            let spaEntities = EntitiesCatalog().getRestaurants(category: "Spa")
-            ENTITY_CATEGORIES[7].entities = spaEntities
-        }*/
-    
+        //Setup each category
         guard let dinner = EntityCategory(name: "Middag", photo: dinnerPhoto, color: UIColor(red:0.02, green:0.15, blue:0.16, alpha:0.6)) else {
-            fatalError("Unable to instantiate meal1")
+            fatalError("Unable to instantiate")
         }
         
         guard let lunch = EntityCategory(name: "Frokost", photo: lunchPhoto, color: UIColor(red:0.27, green:0.40, blue:0.39, alpha:0.6)) else {
-            fatalError("Unable to instantiate meal2")
+            fatalError("Unable to instantiate ")
         }
         
         guard let brunch = EntityCategory(name: "Brunch", photo: brunchPhoto, color: UIColor(red:0.49, green:0.16, blue:0.18, alpha:0.6)) else {
-            fatalError("Unable to instantiate meal2")
+            fatalError("Unable to instantiate ")
         }
         
         guard let cocktails = EntityCategory(name: "Cocktails", photo: cocktailsPhoto, color: UIColor(red:0.62, green:0.53, blue:0.51, alpha:0.6)) else {
-            fatalError("Unable to instantiate meal2")
+            fatalError("Unable to instantiate ")
         }
         
         guard let takeaway = EntityCategory(name: "Take Away", photo: takeawayPhoto, color: UIColor(red:0.75, green:0.57, blue:0.02, alpha:0.6)) else {
-            fatalError("Unable to instantiate meal2")
+            fatalError("Unable to instantiate ")
         }
         
         guard let spa = EntityCategory(name: "Spa", photo: spaPhoto, color: UIColor(red:0.15, green:0.03, blue:0.00, alpha:0.6)) else {
-            fatalError("Unable to instantiate meal2")
+            fatalError("Unable to instantiate ")
         }
         
         guard let coffee = EntityCategory(name: "Kaffebar", photo: coffeePhoto, color: UIColor(red:0.62, green:0.53, blue:0.51, alpha:0.6)) else {
-            fatalError("Unable to instantiate meal2")
+            fatalError("Unable to instantiate ")
         }
         
         guard let workstation = EntityCategory(name: "Kontor", photo: workPhoto, color: UIColor(red:0.27, green:0.40, blue:0.39, alpha:0.6)) else {
-            fatalError("Unable to instantiate meal2")
+            fatalError("Unable to instantiate ")
         }
         
         return [dinner, brunch, lunch, takeaway, coffee, workstation, cocktails, spa]

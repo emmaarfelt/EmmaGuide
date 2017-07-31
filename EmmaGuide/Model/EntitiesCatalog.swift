@@ -11,7 +11,6 @@ import Foundation
 var ENTITIES = [Entity]()
 
 class EntitiesCatalog {
-    
     struct EntityFromFile {
         var name : String
         var placeID : String
@@ -48,11 +47,7 @@ class EntitiesCatalog {
                                               comment: entity.desc,
                                               category: entity.category) else  { continue }
                     ENTITIES.append(currentEntity)
-                    print(currentEntity.name)
-                }
-                
-                DispatchQueue.main.async {
-                    print("Time consuming task has completed. From here we are allowed to update user interface.")
+                    print(entity.name)
                 }
             }
         } else {
@@ -70,8 +65,7 @@ class EntitiesCatalog {
             categoryRestaurants.append(rest)
         }
         
-        print("Loaded\(category)")
-        return categoryRestaurants.shuffled() //Shuffle to make the order of the cards different at each load
+        return categoryRestaurants
     }
     
 }
