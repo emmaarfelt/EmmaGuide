@@ -37,6 +37,16 @@
 		B5DE8D121F226FA5005503E0 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DE8D111F226FA5005503E0 /* APICaller.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B58DE22A1F2FB351000F584A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B58F490A1F13D6E000CC8D2F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B58F49111F13D6E000CC8D2F;
+			remoteInfo = EmmaGuide;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		B5007E4E1F28B68500401571 /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationController.swift; path = Controllers/LocationController.swift; sourceTree = "<group>"; };
 		B5007E501F28DA8F00401571 /* Children of the Starlight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Children of the Starlight.ttf"; path = "Images.xcassets/Children of the Starlight.dataset/Children of the Starlight.ttf"; sourceTree = "<group>"; };
@@ -51,6 +61,7 @@
 		B56B2A771F1A8A3800670B68 /* DraggableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DraggableView.swift; path = Controllers/DraggableView.swift; sourceTree = "<group>"; };
 		B58CC7141F27A2D1003B6BA2 /* OpeningHoursView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = OpeningHoursView.xib; path = EmmaGuide/Views/OpeningHoursView.xib; sourceTree = "<group>"; };
 		B58CC7161F27A36A003B6BA2 /* OpeningHoursView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OpeningHoursView.swift; path = EmmaGuide/Views/OpeningHoursView.swift; sourceTree = "<group>"; };
+		B58DE2251F2FB350000F584A /* EmmaGuideTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmmaGuideTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B58F49121F13D6E000CC8D2F /* EmmaGuide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmmaGuide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B58F49151F13D6E000CC8D2F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B58F491A1F13D6E000CC8D2F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -73,6 +84,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B58DE2221F2FB350000F584A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B58F490F1F13D6E000CC8D2F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -104,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				B58F49121F13D6E000CC8D2F /* EmmaGuide.app */,
+				B58DE2251F2FB350000F584A /* EmmaGuideTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,6 +209,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B58DE2241F2FB350000F584A /* EmmaGuideTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B58DE22C1F2FB351000F584A /* Build configuration list for PBXNativeTarget "EmmaGuideTests" */;
+			buildPhases = (
+				B58DE2211F2FB350000F584A /* Sources */,
+				B58DE2221F2FB350000F584A /* Frameworks */,
+				B58DE2231F2FB350000F584A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B58DE22B1F2FB351000F584A /* PBXTargetDependency */,
+			);
+			name = EmmaGuideTests;
+			productName = EmmaGuideTests;
+			productReference = B58DE2251F2FB350000F584A /* EmmaGuideTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B58F49111F13D6E000CC8D2F /* EmmaGuide */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B58F49241F13D6E000CC8D2F /* Build configuration list for PBXNativeTarget "EmmaGuide" */;
@@ -213,10 +250,15 @@
 		B58F490A1F13D6E000CC8D2F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Emma Arfelt";
 				TargetAttributes = {
+					B58DE2241F2FB350000F584A = {
+						CreatedOnToolsVersion = 9.0;
+						DevelopmentTeam = R3Q4922W73;
+						TestTargetID = B58F49111F13D6E000CC8D2F;
+					};
 					B58F49111F13D6E000CC8D2F = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = R3Q4922W73;
@@ -239,11 +281,19 @@
 			projectRoot = "";
 			targets = (
 				B58F49111F13D6E000CC8D2F /* EmmaGuide */,
+				B58DE2241F2FB350000F584A /* EmmaGuideTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B58DE2231F2FB350000F584A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B58F49101F13D6E000CC8D2F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -261,6 +311,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B58DE2211F2FB350000F584A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B58F490E1F13D6E000CC8D2F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -291,6 +348,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		B58DE22B1F2FB351000F584A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B58F49111F13D6E000CC8D2F /* EmmaGuide */;
+			targetProxy = B58DE22A1F2FB351000F584A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		B58F49191F13D6E000CC8D2F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -311,6 +376,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B58DE22D1F2FB351000F584A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = R3Q4922W73;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = EmmaGuideTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CipherBureau.EmmaGuideTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmmaGuide.app/EmmaGuide";
+			};
+			name = Debug;
+		};
+		B58DE22E1F2FB351000F584A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = R3Q4922W73;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = EmmaGuideTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.CipherBureau.EmmaGuideTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmmaGuide.app/EmmaGuide";
+			};
+			name = Release;
+		};
 		B58F49221F13D6E000CC8D2F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -456,6 +561,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B58DE22C1F2FB351000F584A /* Build configuration list for PBXNativeTarget "EmmaGuideTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B58DE22D1F2FB351000F584A /* Debug */,
+				B58DE22E1F2FB351000F584A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		B58F490D1F13D6E000CC8D2F /* Build configuration list for PBXProject "EmmaGuide" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

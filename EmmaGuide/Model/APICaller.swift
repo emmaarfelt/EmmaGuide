@@ -51,7 +51,7 @@ class APICaller {
         if let place = TEXT_CACHE.object(forKey: placeId as AnyObject) {
             return place as? APICaller.Restaurant
         } else {
-            let jsonURLString = "https://maps.googleapis.com/maps/api/place/details/json?placeid=\(placeId)&key=K&language=da"
+            let jsonURLString = "https://maps.googleapis.com/maps/api/place/details/json?placeid=\(placeId)&key=KEY&language=da"
             guard let url = URL(string: jsonURLString) else { return nil}
             
             // set up the session
